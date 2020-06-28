@@ -2,7 +2,7 @@
 <!-- <input
 type="text"
 class="form-control"
-(input)="onUpdateServerName($event)"> -->  <!-- This does not do 2-way binding-->
+(input)="onUpdateServerName($event)"> -->  <!-- This does not do 2-way-->
 
 <input type="text"
 class="form-control"
@@ -17,7 +17,9 @@ class="btn btn-primary"
   Add Server
 </button>
 
-<p [innerText]="serverCreationStatus"></p>
+<!-- <p [innerText]="serverCreationStatus"></p> -->
+
+<p *ngIf="serverCreated" [innerText]="serverCreationStatus"></p>
 
 <app-server></app-server>
 <app-server></app-server>

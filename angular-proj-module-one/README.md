@@ -46,3 +46,5 @@ ng g c servers
 ## Directives
 
 Directives are Instructions in the DOM
+
+star(*) indicates this is a structural directive
