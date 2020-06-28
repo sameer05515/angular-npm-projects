@@ -36,3 +36,7 @@ ng new angular-proj-module-one
 
 ## To install bootstrap
 npm install --save bootstrap@3
+
+## To create component 
+ng generate component servers
+ng g c servers
