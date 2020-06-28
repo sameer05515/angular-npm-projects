@@ -13,4 +13,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   //title = 'Premendra Kumar learning angular-proj-module-one';
   //name = "Premendra Kumar";
+  userName='';
 }
