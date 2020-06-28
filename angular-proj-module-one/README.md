@@ -42,3 +42,7 @@ npm install --save bootstrap@3
 ng generate component servers
 
 ng g c servers
+
+## Directives
+
+Directives are Instructions in the DOM
