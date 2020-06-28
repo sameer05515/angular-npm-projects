@@ -1,8 +1,13 @@
 
-<button class="btn btn-primary" [disabled]="!allowNewServer">
+<button
+class="btn btn-primary"
+[disabled]="!allowNewServer"
+(click)="onCreateServer()">
   <!-- Property binding -->
   Add Server
 </button>
+
+<p [innerText]="serverCreationStatus"></p>
 
 <app-server></app-server>
 <app-server></app-server>
