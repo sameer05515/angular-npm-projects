@@ -33,3 +33,6 @@ npm install -g @angular/cli@latest
 
 ## To  create a angular app
 ng new angular-proj-module-one
+
+## To install bootstrap
+npm install --save bootstrap@3
