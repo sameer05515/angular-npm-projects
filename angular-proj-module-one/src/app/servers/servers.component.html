@@ -19,8 +19,11 @@ class="btn btn-primary"
 
 <!-- <p [innerText]="serverCreationStatus"></p> -->
 
-<p *ngIf="serverCreated; else noServer" [innerText]="serverCreationStatus"></p>
-<ng-template #noServer>No server was created</ng-template>
+<!-- <p *ngIf="serverCreated; else noServer" [innerText]="serverCreationStatus"></p>
+<ng-template #noServer>No server was created</ng-template> -->
+
+<p *ngIf="serverCreated;" [innerText]="serverCreationStatus"></p>
+
 
 <app-server></app-server>
 <app-server></app-server>
