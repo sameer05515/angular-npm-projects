@@ -9,6 +9,18 @@ export class ServerComponent {
   private serverId: number = 10;
   private serverStatus: string = 'offline';
 
+  constructor(){
+    //this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+
+    setInterval(() => {
+      this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+    }, 1000);
+  }
+
+  getColor(){
+    return this.serverStatus === 'online' ? 'green' : 'red';
+  }
+
   getServerStatus(){
     return this.serverStatus;
   }
