@@ -1,12 +1,21 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { ServerComponent} from './server/server.component';
-import { ServersComponent } from './servers/servers.component';
-import { SuccessAlertComponent } from './success-alert/success-alert.component';
-import { WarningAlertComponent } from './warning-alert/warning-alert.component';
+
+import { WarningAlertComponent } from './components/udemy-study/warning-alert/warning-alert.component';
+import { SuccessAlertComponent } from './components/udemy-study/success-alert/success-alert.component';
+import { ServersComponent } from './components/udemy-study/servers/servers.component';
+import { ServerComponent } from './components/udemy-study/servers/server/server.component';
+
+import { MyPagesLinkComponent } from './components/my-pages-application-components/links/link/link.component';
+import { MyPagesLinksComponent } from './components/my-pages-application-components/links/links.component';
+import { MyPagesDbBackupLinkComponent } from './components/my-pages-application-components/db-backup-links/db-backup-link/db-backup-link.component';
+import { MyPagesDbBackupLinksComponent } from './components/my-pages-application-components/db-backup-links/db-backup-links.component';
+
 
 @NgModule({
   declarations: [
@@ -14,11 +23,16 @@ import { WarningAlertComponent } from './warning-alert/warning-alert.component';
     ServerComponent,
     ServersComponent,
     SuccessAlertComponent,
-    WarningAlertComponent
+    WarningAlertComponent,
+    MyPagesDbBackupLinksComponent,
+    MyPagesDbBackupLinkComponent,
+    MyPagesLinksComponent,
+    MyPagesLinkComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

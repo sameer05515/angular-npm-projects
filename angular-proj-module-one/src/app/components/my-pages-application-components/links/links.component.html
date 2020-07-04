@@ -1,0 +1,29 @@
+<!-- <label>Server Name</label> -->
+<!-- <input
+type="text"
+class="form-control"
+(input)="onUpdateServerName($event)"> -->  <!-- This does not do 2-way-->
+
+<!-- <input type="text"
+class="form-control"
+[(ngModel)]="serverName">
+
+<p>{{serverName}}</p> -->
+<!-- <button
+class="btn btn-primary"
+[disabled]="!allowNewServer"
+(click)="onCreateServer()"> -->
+  <!-- Property binding -->
+  <!-- Add Server -->
+<!-- </button> -->
+
+<!-- <p [innerText]="serverCreationStatus"></p> -->
+
+<!-- <p *ngIf="serverCreated; else noServer" [innerText]="serverCreationStatus"></p>
+<ng-template #noServer><p>No server was created</p></ng-template> -->
+
+<!-- <p *ngIf="serverCreated;" [innerText]="serverCreationStatus"></p> -->
+
+
+<app-my-pages-link *ngFor="let server of servers"></app-my-pages-link>
+

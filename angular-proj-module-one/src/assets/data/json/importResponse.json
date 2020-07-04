@@ -1,0 +1,436 @@
+{
+    "isError": true,
+    "data": {
+        "message": "Total time elapsed for writing all (58109) data into db:- 6878 milli-seconds",
+        "status": "Fail",
+        "zipFileToExtract": "C:/Users/premendra.kumar/Desktop/DUMP/wm-imp-exp/json-data-output/word-meaning-data_2020-01-15_11_20_42.zip",
+        "batchSize": 1200,
+        "record": 58109,
+        "duration": 6878,
+        "insertIntoTargetDBEnabled": true,
+        "details": [
+            {
+                "fileName": "word-meaning1.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '1200' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '1200' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning2.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '2400' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '2400' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning3.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '3600' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '3600' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning4.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '4800' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '4800' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning5.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '6000' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '6000' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning6.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '7200' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '7200' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning7.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '8400' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '8400' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning8.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '9600' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '9600' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning9.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '10800' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '10800' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning10.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '12000' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '12000' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning11.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '13200' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '13200' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning12.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '14400' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '14400' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning13.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '15600' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '15600' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning14.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '16800' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '16800' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning15.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '18000' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '18000' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning16.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '19200' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '19200' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning17.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '20400' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '20400' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning18.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '21600' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '21600' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning19.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '22800' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '22800' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning20.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '24000' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '24000' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning21.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '25200' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '25200' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning22.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '26400' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '26400' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning23.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '27600' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '27600' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning24.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '28800' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '28800' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning25.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '30000' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '30000' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning26.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '31200' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '31200' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning27.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '32400' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '32400' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning28.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '33600' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '33600' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning29.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '34800' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '34800' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning30.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '36000' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '36000' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning31.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '37200' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '37200' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning32.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '38400' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '38400' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning33.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '39600' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '39600' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning34.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '40800' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '40800' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning35.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '42000' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '42000' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning36.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '43200' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '43200' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning37.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '44400' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '44400' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning38.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '45600' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '45600' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning39.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '46800' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '46800' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning40.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '48000' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '48000' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning41.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '49200' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '49200' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning42.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '50400' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '50400' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning43.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '51600' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '51600' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning44.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '52800' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '52800' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning45.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '54000' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '54000' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning46.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '55200' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '55200' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning47.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '56400' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '56400' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning48.json",
+                "record": 1200,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '57600' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '57600' for key 'PRIMARY'",
+                "status": "Exception"
+            },
+            {
+                "fileName": "word-meaning49.json",
+                "record": 509,
+                "duration": 0,
+                "message": "Exception occured : PreparedStatementCallback; SQL [INSERT INTO t_word(id, unique_name, word, type, details, created_on, updated_on, last_read) values(?,?,?,?,?,?,?,?)]; Duplicate entry '58109' for key 'PRIMARY'; nested exception is java.sql.BatchUpdateException: Duplicate entry '58109' for key 'PRIMARY'",
+                "status": "Exception"
+            }
+        ],
+        "importPlan": [
+            {
+                "description": "Will import data from given location.",
+                "children": [
+                    {
+                        "description": "0. Request parameters validations",
+                        "children": [
+                            {
+                                "description": "0.1 Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: '1200kk'",
+                                "children": []
+                            },
+                            {
+                                "description": "0.2 Invalid file extension[] . Only zip file is required!",
+                                "children": []
+                            },
+                            {
+                                "description": "0.3 Invalid zip file location",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "description": "1. Unzip,",
+                        "children": [
+                            {
+                                "description": "1.1 Check if given zip file exists,",
+                                "children": [
+                                    {
+                                        "description": "1.1.1 java.io.FileNotFoundException: <xxx>.zip (The system cannot find the file specified)",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "description": "1.2 Extract zip file,",
+                                "children": []
+                            },
+                            {
+                                "description": "1.3 Sort file names based on index prefixes of files,",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "description": "2. Read json,",
+                        "children": []
+                    },
+                    {
+                        "description": "3. validate for duplicacy/conflicts,",
+                        "children": [
+                            {
+                                "description": "3.1 Validation for :- duplicate id ",
+                                "children": [
+                                    {
+                                        "description": "3.1.1 java.sql.BatchUpdateException: Duplicate entry 'xxx {id}' for key 'PRIMARY'",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "description": "3.2 Validation for :- duplicate unique_string",
+                                "children": []
+                            },
+                            {
+                                "description": "3.3 Validation for :- duplicate word",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "description": "4. write in target DB",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "message": "Fail",
+    "timestamp": "2020-01-15T06:18:40.649+0000",
+    "status": 500
+}

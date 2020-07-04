@@ -1,0 +1,59 @@
+{
+   "descriptionStyle": {
+      "color": "black",
+      "font-size": "8px",
+      "padding": "10px"
+   },
+   "anchorLinkDataStyle": {
+      "color": "blue",
+      "font-size": "12px",
+      "padding": "5px"
+   },
+   "anchorDBLinkDataStyle": {
+      "color": "blue",
+      "font-size": "9px",
+      "padding": "5px"
+   },
+   "preDescriptionStyle": {
+      "color": "black",
+      "font-size": "10px",
+      "padding": "5px",
+	  "border-style": "solid",
+	  "border-color": "coral"
+   },
+   "planDataDescriptionStyle": {
+		"color": "black",
+		"font-size": "10px",
+		"border-style": "solid",
+		"border-color": "green"
+   },
+   "templateCategoryDataDescriptionStyle": {
+		
+		"font-size": "15px",
+		"padding": "5px",
+		"border-style": "solid",
+		"border-color": "green"
+   },
+   "templateQuestionDataDescriptionStyle": {
+		
+		"font-size": "14px",
+		"padding": "15px",
+		"border-style": "solid",
+		"border-color": "yellow"
+   },
+   "templateAnswerDataDescriptionStyle": {
+		
+		"font-size": "12px",
+		"padding": "25px",
+		"border-style": "solid",
+		"border-color": "black"
+   },
+   "templateParentDescriptionStyle": {
+		
+		"padding": "5px"
+		
+   }
+   
+   
+   
+}
