@@ -15,6 +15,9 @@ import { MyPagesLinkComponent } from './components/my-pages-application-componen
 import { MyPagesLinksComponent } from './components/my-pages-application-components/links/links.component';
 import { MyPagesDbBackupLinkComponent } from './components/my-pages-application-components/db-backup-links/db-backup-link/db-backup-link.component';
 import { MyPagesDbBackupLinksComponent } from './components/my-pages-application-components/db-backup-links/db-backup-links.component';
+import { EvenComponent } from './components/udemy-study/even/even.component';
+import { OddComponent } from './components/udemy-study/odd/odd.component';
+import { GameControlComponent } from './components/udemy-study/game-control/game-control.component';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { MyPagesDbBackupLinksComponent } from './components/my-pages-application
     MyPagesDbBackupLinksComponent,
     MyPagesDbBackupLinkComponent,
     MyPagesLinksComponent,
-    MyPagesLinkComponent
+    MyPagesLinkComponent,
+    EvenComponent,
+    OddComponent,
+    GameControlComponent
   ],
   imports: [
     BrowserModule,
