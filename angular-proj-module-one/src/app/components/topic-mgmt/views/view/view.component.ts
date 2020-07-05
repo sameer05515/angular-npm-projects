@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { View } from './../../../../interfaces/view.model';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-topic-mgmt-view',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view.component.css']
 })
 export class ViewComponent implements OnInit {
+
+  @Input('data') viewInput: View;
 
   constructor() { }
 

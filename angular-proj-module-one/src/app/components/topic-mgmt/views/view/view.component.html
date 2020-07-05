@@ -1,1 +1,11 @@
-<p>view works!</p>
+<div class="well">
+  <p>{{viewInput.title}}</p>
+  <p [innerHTML]="viewInput.description"></p>
+
+  <!-- <trix-editor #trixEditor class="trix-content" input="x"
+            [editor]="trixEditor"></trix-editor> -->
+
+  <p>{{viewInput.dateCreated}}</p>
+  <p>{{viewInput.dateLastModified}}</p>
+  <p>{{viewInput.id}}</p>
+</div>

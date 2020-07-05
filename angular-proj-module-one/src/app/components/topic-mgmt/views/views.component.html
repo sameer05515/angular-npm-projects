@@ -1,1 +1,11 @@
-<p>views works!</p>
+<div class="container prem-div-border">
+  {{viewsData.length}}
+  <div class="row">
+    <div class="clo-xs-12 list" *ngFor="let data of viewsData; let index">
+
+      <app-topic-mgmt-view [data]="data"></app-topic-mgmt-view>
+
+    </div>
+  </div>
+
+</div>

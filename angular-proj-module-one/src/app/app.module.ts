@@ -25,6 +25,7 @@ import { TopicsComponent } from './components/topic-mgmt/topics/topics.component
 import { TopicComponent } from './components/topic-mgmt/topics/topic/topic.component';
 import { GroupsComponent } from './components/topic-mgmt/groups/groups.component';
 import { GroupComponent } from './components/topic-mgmt/groups/group/group.component';
+import { TrixEditorAngularComponent } from './trix-editor-angular/trix-editor-angular.component';
 
 
 
@@ -47,7 +48,8 @@ import { GroupComponent } from './components/topic-mgmt/groups/group/group.compo
     TopicsComponent,
     TopicComponent,
     GroupsComponent,
-    GroupComponent
+    GroupComponent,
+    TrixEditorAngularComponent
   ],
   imports: [
     BrowserModule,
