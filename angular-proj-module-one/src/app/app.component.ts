@@ -22,7 +22,7 @@ export class AppComponent {
 
   constructor(private http: HttpClient) {
 
-    http.get<Link>('assets/data/json/linkData.json')
+    http.get<Link>('data/json/linkData.json')
       .pipe(map(responseData => {
         const linkArr: Link[] = [];
         this.processLinkResponse(responseData, linkArr);
