@@ -1,8 +1,11 @@
-import { DbLink } from './interfaces/db-link.model';
-import { Link } from './interfaces/link.model';
+
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+
+import { View } from './interfaces/view.model';
+import { DbLink } from './interfaces/db-link.model';
+import { Link } from './interfaces/link.model';
 
 
 @Component({
@@ -21,16 +24,33 @@ export class AppComponent {
   userName = '';
   linkData: Link[] = [];
   dbLinkData: DbLink[] = [];
+  viewData: View[] = [];
 
   constructor(private http: HttpClient) {
     this.GetLinkData(http);
     this.GetDbLinkData(http);
+    this.getViews(http);
+  }
 
+  private getViews(http: HttpClient): void{
+    console.log('[AppComponent] : Going to get views data');
+
+    http.get<View>('http://127.0.0.1:8080/RestServices/rest/views')
+      .pipe(map(responseData => {
+        const dblinkArr: View[] = [];
+        this.processviewResponse(responseData, dblinkArr);
+        return dblinkArr;
+      }))
+      .subscribe(links => {
+        // this.linkData = responseData;
+        console.log('=======>>>>' + links);
+        this.viewData = links;
+      });
 
   }
 
   private GetDbLinkData(http: HttpClient): void{
-    console.log('[AppComponent] : Going to get db link data')
+    console.log('[AppComponent] : Going to get db link data');
     http.get<DbLink>('data/json/dbBakupLinkData.json')
       .pipe(map(responseData => {
         const dblinkArr: Link[] = [];
@@ -61,12 +81,22 @@ export class AppComponent {
 
   private processLinkResponse(responseData: Link, linkArr: Link[]): void {
     for (const link in responseData) {
-      console.log('link' + responseData[link]);
+      if ( responseData[link] != null){
+        console.log('link' + responseData[link]);
       linkArr.push({ ...responseData[link] });
+      }
+
     }
   }
 
   private processDbLinkResponse(responseData: DbLink, dblinkArr: DbLink[]): void {
+    for (const link in responseData) {
+      console.log('link' + responseData[link]);
+      dblinkArr.push({ ...responseData[link] });
+    }
+  }
+
+  private processviewResponse(responseData: View, dblinkArr: View[]): void {
     for (const link in responseData) {
       console.log('link' + responseData[link]);
       dblinkArr.push({ ...responseData[link] });
