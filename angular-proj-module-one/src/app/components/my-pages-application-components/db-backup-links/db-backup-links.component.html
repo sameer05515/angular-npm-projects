@@ -1,3 +1,10 @@
 
-<app-my-pages-db-backup-link *ngFor="let dbLink of dbLinkData" [dbLink]="dbLink"></app-my-pages-db-backup-link>
+<div class="container prem-div-border">
+  <div class="row">
+    <div class="clo-xs-12 list" *ngFor="let dbLink of dbLinkData">
+      <app-my-pages-db-backup-link  [dbLink]="dbLink"></app-my-pages-db-backup-link>
+    </div>
+  </div>
+</div>
+
 
