@@ -37,22 +37,22 @@
    {
 	   "url": "https://rubygarage.org/blog/release-quality-code-with-github",
 	   "description": "How We Use GitHub to Release Quality Code",
-	   "header": "How We Use GitHub to Release Quality Code"	   
+	   "header": "How We Use GitHub to Release Quality Code"
    },
    {
 	   "url": "first.jsp",
 	   "description": "JSP Test",
-	   "header": "JSP Test"	   
+	   "header": "JSP Test"
    },
    {
 	   "url": "http://127.0.0.1:8080/nyambati-scotchio/Angular-1-components/",
 	   "description": "How to Use Angular 1.5's Component Method",
-	   "header": "Angular 1.5's Component"	   
+	   "header": "Angular 1.5's Component"
    },
    {
 	   "url": "http://127.0.0.1:8080/interview-mgmt/",
 	   "description": "JSP and HTML Views developed for question answer dashboard. This need to be re-written using angularjs and bootstrap.",
-	   "header": "JSP and HTML Views developed for question answer dashboard"	   
+	   "header": "JSP and HTML Views developed for question answer dashboard"
    },
    {
       "url": "modalWindowShow.html",
@@ -73,5 +73,10 @@
       "url": "Pass-data-to-a-Bootstrap-modal-dialog-using-angular.html",
       "description": "Pass-data-to-a-Bootstrap-modal-dialog-using-angular.html",
       "header": "Pass-data-to-a-Bootstrap-modal-dialog-using-angular.html"
+   },
+   {
+     "url":"https://www.tutorialsteacher.com/typescript",
+     "description":"TypeScript is an open-source object-oriented language developed and maintained by Microsoft, licensed under Apache 2 license. It is a typed superset of Javascript that compiles to plain JavaScript. TypeScript was developed under Anders Hejlsberg, who also led the creation of the C# language. TypeScript was first released in October 2012.    These tutorials will help you learn TypeScript step by step. Tutorials are broken down into chapters, where each chapter contains several related topics that are packed with easy to understand explanations and real-world examples.",
+     "header" :"TypeScript Tutorials"
    }
 ]
