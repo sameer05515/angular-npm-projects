@@ -25,7 +25,7 @@ export class AppComponent {
     http.get<Link>('assets/data/json/linkData.json')
     .pipe(map(responseData => {
       const linkArr: Link[] = [];
-      for( const link in responseData ){
+      for ( const link in responseData ){
         linkArr.push({...linkArr[link]});
       }
       return linkArr;

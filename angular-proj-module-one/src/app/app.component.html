@@ -9,8 +9,16 @@
       <h1>Practiced till lecture # 41</h1>
       <hr />
 
-      <app-my-pages-db-backup-links></app-my-pages-db-backup-links>
-      <app-my-pages-links link-data=""></app-my-pages-links>
+      <!-- <app-my-pages-db-backup-links></app-my-pages-db-backup-links>
+      <app-my-pages-links></app-my-pages-links> -->
+
+{{linkData.length}}
+      <div *ngFor="let data of linkData">
+        <span><a href="{{data.url}}">{{data.header}}</a></span>
+<span>{{data.description}}</span>
+      </div>
+
+      <hr>
 
       <app-servers></app-servers>
 
