@@ -1,29 +1,3 @@
-<label>Server Name</label>
-<!-- <input
-type="text"
-class="form-control"
-(input)="onUpdateServerName($event)"> -->  <!-- This does not do 2-way-->
 
-<input type="text"
-class="form-control"
-[(ngModel)]="serverName">
-
-<p>{{serverName}}</p>
-<button
-class="btn btn-primary"
-[disabled]="!allowNewServer"
-(click)="onCreateServer()">
-  <!-- Property binding -->
-  Add Server
-</button>
-
-<!-- <p [innerText]="serverCreationStatus"></p> -->
-
-<!-- <p *ngIf="serverCreated; else noServer" [innerText]="serverCreationStatus"></p>
-<ng-template #noServer><p>No server was created</p></ng-template> -->
-
-<p *ngIf="serverCreated;" [innerText]="serverCreationStatus"></p>
-
-
-<app-server *ngFor="let server of servers"></app-server>
+<app-my-pages-db-backup-link *ngFor="let dbLink of dbLinkData" [dbLink]="dbLink"></app-my-pages-db-backup-link>
 

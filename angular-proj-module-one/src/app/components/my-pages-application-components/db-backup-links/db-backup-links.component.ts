@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DbLink } from './../../../interfaces/db-link.model';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   // selector: 'app-servers',
@@ -12,16 +13,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyPagesDbBackupLinksComponent implements OnInit {
 
-  allowNewServer = false;
-  serverCreationStatus = 'No server was created !';
-  serverName = 'Initial Server';
-  serverCreated = false;
-  servers = ['TestServer', 'TestServer2'];
+  @Input() dbLinkData: DbLink[];
 
   constructor() {
-    setTimeout(() => {
-      this.allowNewServer = true;
-    }, 2000);
+    // setTimeout(() => {
+    //   this.allowNewServer = true;
+    // }, 2000);
 
   }
 
@@ -30,14 +27,14 @@ export class MyPagesDbBackupLinksComponent implements OnInit {
 
   onCreateServer(): void {
 
-    this.serverCreated = true;
-    this.servers.push(this.serverName);
-    this.serverCreationStatus = `Server was created! Name is ${this.serverName}`;
+    // this.serverCreated = true;
+    // this.servers.push(this.serverName);
+    // this.serverCreationStatus = `Server was created! Name is ${this.serverName}`;
 
   }
 
   onUpdateServerName(event: Event): void{
-    this.serverName = ( event.target as HTMLInputElement).value;
+    // this.serverName = ( event.target as HTMLInputElement).value;
   }
 
 }
