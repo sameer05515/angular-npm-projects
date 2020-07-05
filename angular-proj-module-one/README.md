@@ -43,6 +43,10 @@ ng generate component servers
 
 ng g c servers
 
+ng generate component servers
+
+ng g c servers/server --spec false
+
 ## Directives
 
 Directives are Instructions in the DOM
