@@ -9,20 +9,10 @@
       <h1>Practiced till lecture # 41</h1>
       <hr />
 
-      <!-- <app-my-pages-db-backup-links></app-my-pages-db-backup-links>
-      <app-my-pages-links></app-my-pages-links> -->
+      <!-- <app-my-pages-db-backup-links></app-my-pages-db-backup-links> -->
+      <app-my-pages-links [linkData]="linkData"></app-my-pages-links>
 
-{{linkData.length}}
-      <div class="container prem-div-border">
-        <div class="row">
-          <div class="clo-xs-12 list" *ngFor="let data of linkData; let index">
-            <!-- {{data.url}}:{{data.header}}:{{data.description}} -->
-        <span><a [href]="data.url">{{data.header}}</a></span>
-        <span>{{data.description}}</span>
-          </div>
-        </div>
 
-      </div>
 
       <hr>
 
@@ -76,11 +66,7 @@
             <label>UserName</label>
             <input type="text" class="form-control" [(ngModel)]="userName" />
             <p>{{ userName }}</p>
-            <button
-              class="btn btn-primary"
-              [disabled]="userName === ''"
-              (click)="userName = ''"
-            >
+            <button class="btn btn-primary" [disabled]="userName === ''" (click)="userName = ''">
               Reset User
             </button>
           </div>
@@ -102,10 +88,12 @@
                 Toggle the displaying of that paragraph with the button created in first step
               </li>
               <li>
-                Log all button clicks in an array and output that array below the seret paragraph (may be log a timestamp or simply an incrementing number)
+                Log all button clicks in an array and output that array below the seret paragraph (may be log a
+                timestamp or simply an incrementing number)
               </li>
               <li>
-                Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)
+                Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color
+                (ngClass)
               </li>
             </ol>
 
@@ -115,11 +103,7 @@
             <label>UserName</label>
             <input type="text" class="form-control" [(ngModel)]="userName" />
             <p>{{ userName }}</p>
-            <button
-              class="btn btn-primary"
-              [disabled]="userName === ''"
-              (click)="userName = ''"
-            >
+            <button class="btn btn-primary" [disabled]="userName === ''" (click)="userName = ''">
               Reset User
             </button>
           </div>

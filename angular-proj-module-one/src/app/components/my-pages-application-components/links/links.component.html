@@ -25,5 +25,17 @@ class="btn btn-primary"
 <!-- <p *ngIf="serverCreated;" [innerText]="serverCreationStatus"></p> -->
 
 
-<app-my-pages-link *ngFor="let server of servers"></app-my-pages-link>
+<!-- <app-my-pages-link *ngFor="let server of servers"></app-my-pages-link> -->
+
+
+{{linkData.length}}
+      <div class="container prem-div-border">
+        <div class="row">
+          <div class="clo-xs-12 list" *ngFor="let data of linkData; let index">
+
+            <app-my-pages-link [data]="data"></app-my-pages-link>
+          </div>
+        </div>
+
+      </div>
 
