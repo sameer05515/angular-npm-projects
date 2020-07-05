@@ -19,6 +19,13 @@ import { MyPagesLinksComponent } from './components/my-pages-application-compone
 import { MyPagesDbBackupLinkComponent } from './components/my-pages-application-components/db-backup-links/db-backup-link/db-backup-link.component';
 import { MyPagesDbBackupLinksComponent } from './components/my-pages-application-components/db-backup-links/db-backup-links.component';
 
+import { ViewsComponent } from './components/topic-mgmt/views/views.component';
+import { ViewComponent } from './components/topic-mgmt/views/view/view.component';
+import { TopicsComponent } from './components/topic-mgmt/topics/topics.component';
+import { TopicComponent } from './components/topic-mgmt/topics/topic/topic.component';
+import { GroupsComponent } from './components/topic-mgmt/groups/groups.component';
+import { GroupComponent } from './components/topic-mgmt/groups/group/group.component';
+
 
 
 @NgModule({
@@ -34,7 +41,13 @@ import { MyPagesDbBackupLinksComponent } from './components/my-pages-application
     MyPagesLinkComponent,
     EvenComponent,
     OddComponent,
-    GameControlComponent
+    GameControlComponent,
+    ViewsComponent,
+    ViewComponent,
+    TopicsComponent,
+    TopicComponent,
+    GroupsComponent,
+    GroupComponent
   ],
   imports: [
     BrowserModule,
