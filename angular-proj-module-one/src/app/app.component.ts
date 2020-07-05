@@ -25,9 +25,7 @@ export class AppComponent {
     http.get<Link>('assets/data/json/linkData.json')
     .pipe(map(responseData => {
       const linkArr: Link[] = [];
-      for ( const link in responseData ){
-        linkArr.push({...linkArr[link]});
-      }
+      this.processLinkResponse(responseData, linkArr);
       return linkArr;
 
     }
@@ -42,5 +40,11 @@ export class AppComponent {
 
     );
 
+  }
+
+  private processLinkResponse(responseData: Link, linkArr: Link[]):void {
+    for (const link in responseData) {
+      linkArr.push({ ...linkArr[link] });
+    }
   }
 }
