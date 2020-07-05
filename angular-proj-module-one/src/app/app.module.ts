@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+
 import { AppComponent } from './app.component';
 
 import { WarningAlertComponent } from './components/udemy-study/warning-alert/warning-alert.component';
@@ -49,7 +51,9 @@ import { TrixEditorAngularComponent } from './trix-editor-angular/trix-editor-an
     TopicComponent,
     GroupsComponent,
     GroupComponent,
-    TrixEditorAngularComponent
+    TrixEditorAngularComponent,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot()
   ],
   imports: [
     BrowserModule,

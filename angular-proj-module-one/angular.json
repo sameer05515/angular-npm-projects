@@ -27,6 +27,8 @@
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/trix/dist/trix.css",
+              "node_modules/froala-editor/css/froala_editor.pkgd.min.css",
+              "node_modules/froala-editor/css/froala_style.min.css",
               "src/styles.css"
             ],
             "scripts": ["node_modules/trix/dist/trix.js"]

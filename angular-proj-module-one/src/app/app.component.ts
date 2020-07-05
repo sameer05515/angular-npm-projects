@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import { View } from './interfaces/view.model';
 import { DbLink } from './interfaces/db-link.model';
 import { Link } from './interfaces/link.model';
+// import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 
 @Component({
@@ -32,7 +33,7 @@ export class AppComponent {
     this.getViews(http);
   }
 
-  private getViews(http: HttpClient): void{
+  private getViews(http: HttpClient): void {
     console.log('[AppComponent] : Going to get views data');
 
     http.get<View>('http://127.0.0.1:8080/RestServices/rest/views')
@@ -49,7 +50,7 @@ export class AppComponent {
 
   }
 
-  private GetDbLinkData(http: HttpClient): void{
+  private GetDbLinkData(http: HttpClient): void {
     console.log('[AppComponent] : Going to get db link data');
     http.get<DbLink>('data/json/dbBakupLinkData.json')
       .pipe(map(responseData => {
@@ -64,8 +65,8 @@ export class AppComponent {
       });
   }
 
-  private GetLinkData(http: HttpClient): void{
-    console.log('[AppComponent] : Going to get link data')
+  private GetLinkData(http: HttpClient): void {
+    console.log('[AppComponent] : Going to get link data');
     http.get<Link>('data/json/linkData.json')
       .pipe(map(responseData => {
         const linkArr: Link[] = [];
@@ -81,9 +82,9 @@ export class AppComponent {
 
   private processLinkResponse(responseData: Link, linkArr: Link[]): void {
     for (const link in responseData) {
-      if ( responseData[link] != null){
+      if (responseData[link] != null) {
         console.log('link' + responseData[link]);
-      linkArr.push({ ...responseData[link] });
+        linkArr.push({ ...responseData[link] });
       }
 
     }
@@ -91,15 +92,19 @@ export class AppComponent {
 
   private processDbLinkResponse(responseData: DbLink, dblinkArr: DbLink[]): void {
     for (const link in responseData) {
+      if (responseData[link] != null) {
       console.log('link' + responseData[link]);
       dblinkArr.push({ ...responseData[link] });
+      }
     }
   }
 
   private processviewResponse(responseData: View, dblinkArr: View[]): void {
     for (const link in responseData) {
+      if (responseData[link] != null) {
       console.log('link' + responseData[link]);
       dblinkArr.push({ ...responseData[link] });
+      }
     }
   }
 }

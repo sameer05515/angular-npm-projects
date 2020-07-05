@@ -1,0 +1,83 @@
+{
+  "name": "angular-froala-wysiwyg-base",
+  "version": "3.1.1",
+  "description": "Angular 4, 5, 6, 7, 8 and 9 bindings for Froala WYSIWYG HTML rich text editor",
+  "main": "bundles/angular-froala-wysiwyg.umd.js",
+  "typings": "index.d.ts",
+  "module": "index.js",
+  "scripts": {
+    "lite-server": "lite-server -c demo/bs-config.json",
+    "demo.serve": "npm run -s build link demo.build lite-server",
+    "demo.build": "ng build --aot=false",
+    "build": "ngm build --prod src --clean",
+    "link": "ngm link -p src --here",
+    "build.watch": "ngm build -p src --watch --skip-bundles",
+    "start": "ng serve --aot=false --host 0.0.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/froala/angular-froala-wysiwyg.git"
+  },
+  "keywords": [
+    "angular2",
+    "angular4",
+    "angular5",
+    "angular6",
+    "angular7",
+    "angular8",
+    "angular9",
+    "ng2",
+    "ng4",
+    "ng5",
+    "ng6",
+    "ng7",
+    "ng8",
+    "ng9",
+    "froala",
+    "html",
+    "text",
+    "editor",
+    "wysiwyg",
+    "rich editor",
+    "rich text editor",
+    "rte",
+    "javascript"
+  ],
+  "author": "Froala Labs (https://www.froala.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/froala/angular-froala-wysiwyg/issues"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "froala-editor": "^3.1.1",
+    "tslib": "^1.9.0"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "lite-server": "^2.5.4",
+    "@angular-devkit/build-angular": "~0.11.0",
+    "@angular/cli": "^7.1.4",
+    "@angular/common": "^7.2.0",
+    "@angular/compiler": "^7.2.0",
+    "@angular/compiler-cli": "^7.2.0",
+    "@angular/core": "^7.2.0",
+    "@angular/forms": "^7.2.0",
+    "@angular/http": "^7.2.0",
+    "@angular/language-service": "^7.2.0",
+    "@angular/platform-browser": "^7.2.0",
+    "@angular/platform-browser-dynamic": "^7.2.0",
+    "@angular/router": "^7.2.0",
+    "@types/marked": "0.0.28",
+    "@types/node": "7.0.0",
+    "@types/tapable": "^1.0.4",
+    "@types/webpack": "^4.39.5",
+    "classlist-polyfill": "1.0.3",
+    "ngm-cli": "^1.0.4",
+    "rxjs": "^6.3.3",
+    "rxjs-compat": "^6.3.2",
+    "ts-helpers": "^1.1.1",
+    "typescript": "3.2.4",
+    "zone.js": "^0.8.26"
+  }
+}

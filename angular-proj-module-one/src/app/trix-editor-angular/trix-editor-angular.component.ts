@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-trix-editor-angular',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrixEditorAngularComponent implements OnInit {
 
+  @Input() editor: any;
+
   constructor() { }
 
   ngOnInit(): void {
+    const element: any = document.querySelector('trix-editor');
+    console.log(element.editor.getDocument());
+    element.addEventListener('trix-attachment-add', (event) => {
+      if (event.attachment.file) {
+        console.log(event);
+      }
+    });
   }
 
 }
