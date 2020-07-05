@@ -1,0 +1,28 @@
+/* Add application styles & imports to this file! */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {  
+  max-width: 720px;
+  margin-right: auto;
+  margin-left: auto;    
+}
+
+.quote {
+    color: #8cc540;
+    font-style: italic;
+}
+
+.redText {
+    color: Red;
+    font-size: 12px;
+    font-family: Arial;
+}
+
+h1.titleText {
+    color: #69a8cf;
+    text-align: left;
+    margin-top: 40px;
+    font-weight: normal;
+}
