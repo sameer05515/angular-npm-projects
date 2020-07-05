@@ -44,7 +44,8 @@ export class AppComponent {
 
   private processLinkResponse(responseData: Link, linkArr: Link[]):void {
     for (const link in responseData) {
-      linkArr.push({ ...linkArr[link] });
+      console.log('link'+responseData[link]);
+      linkArr.push({...responseData[link]});
     }
   }
 }

@@ -13,9 +13,15 @@
       <app-my-pages-links></app-my-pages-links> -->
 
 {{linkData.length}}
-      <div *ngFor="let data of linkData">
-        <span><a href="{{data.url}}">{{data.header}}</a></span>
-<span>{{data.description}}</span>
+      <div class="container prem-div-border">
+        <div class="row">
+          <div class="clo-xs-12 list" *ngFor="let data of linkData; let index">
+            <!-- {{data.url}}:{{data.header}}:{{data.description}} -->
+        <span><a [href]="data.url">{{data.header}}</a></span>
+        <span>{{data.description}}</span>
+          </div>
+        </div>
+
       </div>
 
       <hr>
