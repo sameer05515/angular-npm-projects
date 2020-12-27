@@ -31,7 +31,9 @@
               "node_modules/froala-editor/css/froala_style.min.css",
               "src/styles.css"
             ],
-            "scripts": ["node_modules/trix/dist/trix.js"]
+            "scripts": [
+              "node_modules/trix/dist/trix.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -125,6 +127,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-proj-module-one"
+    }
+  },
+  "defaultProject": "angular-proj-module-one",
+  "cli": {
+    "analytics": "99795e05-5c9d-457d-b3c9-a852f1e14db1"
+  }
 }

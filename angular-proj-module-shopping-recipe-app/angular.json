@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-proj-module-shopping-recipe-app"
+    }
+  },
+  "defaultProject": "angular-proj-module-shopping-recipe-app",
+  "cli": {
+    "analytics": "cff89f28-8682-4034-b859-b21ff89e0e23"
+  }
 }
