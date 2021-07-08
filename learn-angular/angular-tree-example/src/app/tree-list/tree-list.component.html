@@ -10,5 +10,12 @@ Add New Tree Node
 
 
 <p *ngIf="treeNodeCreated">{{ treeNodeCreationStatus }}</p>
-<app-tree></app-tree>
-<app-tree></app-tree>
+
+<div *ngFor="let tData of totalAngularPackages">
+
+    <app-tree [treeNodeData]="tData"> </app-tree>
+</div>
+
+<!-- <app-tree></app-tree> -->
+
+<p>{{ totalAngularPackages | json }}</p>

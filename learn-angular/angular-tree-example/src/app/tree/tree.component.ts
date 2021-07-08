@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input,forwardRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tree',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class TreeComponent implements OnInit {
 
   treeNodeName:string=" My tree node name";
+
+  @Input() treeNodeData:any;
 
   constructor() { }
 

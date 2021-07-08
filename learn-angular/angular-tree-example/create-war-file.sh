@@ -1,6 +1,6 @@
 rm -rf dist/
 
-rm -rf /home/premendra/Downloads/apache-tomcat-8.5.40/webapps/angular-tree-example-prem
+# rm -rf /home/premendra/Downloads/apache-tomcat-8.5.40/webapps/angular-tree-example-prem
 
 npm run buildForTomcat
 
