@@ -1,0 +1,726 @@
+{
+    "isError": false,
+    "data": [{
+            "id": 52,
+            "parentId": 0,
+            "title": "Communication Skills",
+            "path": null,
+            "children": [{
+                    "id": 53,
+                    "parentId": 52,
+                    "title": "Vocabulary Building",
+                    "path": null,
+                    "children": []
+                },
+                {
+                    "id": 63,
+                    "parentId": 52,
+                    "title": "English Grammar",
+                    "path": null,
+                    "children": []
+                }
+            ]
+        },
+        {
+            "id": 95,
+            "parentId": 0,
+            "title": "Resume",
+            "path": null,
+            "children": [{
+                    "id": 81,
+                    "parentId": 95,
+                    "title": "Companies where I've worked",
+                    "path": null,
+                    "children": [{
+                            "id": 82,
+                            "parentId": 81,
+                            "title": "Greenapple webware",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 83,
+                            "parentId": 81,
+                            "title": "HCL Infosystems",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 84,
+                            "parentId": 81,
+                            "title": "Novelvox (Previously known as Integration Services & Technologies)",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 88,
+                            "parentId": 81,
+                            "title": "Concentrix ( contractual, payroll-WDC )",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 89,
+                            "parentId": 81,
+                            "title": "Concentrix ( permanent)",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 90,
+                            "parentId": 81,
+                            "title": "Accenture ( permanent)",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 93,
+                            "parentId": 81,
+                            "title": "Concentrix ( permanent, asst mgr)",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 94,
+                            "parentId": 81,
+                            "title": "Indiabulls Securities Ltd ( previous, Indiabulls Ventures Ltd)",
+                            "path": null,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 96,
+                    "parentId": 95,
+                    "title": "Projects I've worked upon",
+                    "path": null,
+                    "children": [{
+                            "id": 97,
+                            "parentId": 96,
+                            "title": "Student Information Management System ",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 98,
+                            "parentId": 96,
+                            "title": "CIPRUS",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 99,
+                            "parentId": 96,
+                            "title": "iAgent",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 100,
+                            "parentId": 96,
+                            "title": "Survey",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 101,
+                            "parentId": 96,
+                            "title": "KnowledgeBase",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 102,
+                            "parentId": 96,
+                            "title": "webdots",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 103,
+                            "parentId": 96,
+                            "title": "QAA",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 104,
+                            "parentId": 96,
+                            "title": "eConvey",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 105,
+                            "parentId": 96,
+                            "title": "ResolveJiffy",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 106,
+                            "parentId": 96,
+                            "title": "ZVR4",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 107,
+                            "parentId": 96,
+                            "title": "GainManager",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 108,
+                            "parentId": 96,
+                            "title": "GIP (Global Interactive Program)",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 109,
+                            "parentId": 96,
+                            "title": "ShubhWeb",
+                            "path": null,
+                            "children": []
+                        },
+                        {
+                            "id": 110,
+                            "parentId": 96,
+                            "title": "Notis",
+                            "path": null,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 113,
+            "parentId": 0,
+            "title": "Organize Life",
+            "path": null,
+            "children": [{
+                    "id": 114,
+                    "parentId": 113,
+                    "title": "Interview Preparation",
+                    "path": null,
+                    "children": [{
+                        "id": 1,
+                        "parentId": 114,
+                        "title": "Mostly Asked Technical Topics",
+                        "path": null,
+                        "children": [{
+                                "id": 2,
+                                "parentId": 1,
+                                "title": "Backend",
+                                "path": null,
+                                "children": [{
+                                        "id": 6,
+                                        "parentId": 2,
+                                        "title": "Core Java",
+                                        "path": null,
+                                        "children": [{
+                                                "id": 54,
+                                                "parentId": 6,
+                                                "title": "OOPS Concept",
+                                                "path": null,
+                                                "children": [{
+                                                        "id": 55,
+                                                        "parentId": 54,
+                                                        "title": "Enapsulation",
+                                                        "path": null,
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "id": 56,
+                                                        "parentId": 54,
+                                                        "title": "Abstraction",
+                                                        "path": null,
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "id": 57,
+                                                        "parentId": 54,
+                                                        "title": "Inheritance",
+                                                        "path": null,
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "id": 58,
+                                                        "parentId": 54,
+                                                        "title": "Polymorphism",
+                                                        "path": null,
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": 59,
+                                                "parentId": 6,
+                                                "title": "Multithreading",
+                                                "path": null,
+                                                "children": [{
+                                                    "id": 71,
+                                                    "parentId": 59,
+                                                    "title": "Starting Threads",
+                                                    "path": null,
+                                                    "children": []
+                                                }]
+                                            },
+                                            {
+                                                "id": 61,
+                                                "parentId": 6,
+                                                "title": "Synchronization",
+                                                "path": null,
+                                                "children": []
+                                            },
+                                            {
+                                                "id": 62,
+                                                "parentId": 6,
+                                                "title": "Collection",
+                                                "path": null,
+                                                "children": []
+                                            },
+                                            {
+                                                "id": 72,
+                                                "parentId": 6,
+                                                "title": "Java 8 new features",
+                                                "path": null,
+                                                "children": [{
+                                                        "id": 73,
+                                                        "parentId": 72,
+                                                        "title": "Lambda Expression",
+                                                        "path": null,
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "id": 74,
+                                                        "parentId": 72,
+                                                        "title": "Stream API",
+                                                        "path": null,
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "id": 75,
+                                                        "parentId": 72,
+                                                        "title": "DEFAULT methods IN the interface",
+                                                        "path": null,
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "id": 76,
+                                                        "parentId": 72,
+                                                        "title": "Functional Interface",
+                                                        "path": null,
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "id": 77,
+                                                        "parentId": 72,
+                                                        "title": "OPTIONAL",
+                                                        "path": null,
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "id": 78,
+                                                        "parentId": 72,
+                                                        "title": "Method REFERENCES",
+                                                        "path": null,
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "id": 79,
+                                                        "parentId": 72,
+                                                        "title": "DATE API",
+                                                        "path": null,
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "id": 80,
+                                                        "parentId": 72,
+                                                        "title": "Nashorn, JavaScript ENGINE",
+                                                        "path": null,
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": 7,
+                                        "parentId": 2,
+                                        "title": "J2EE",
+                                        "path": null,
+                                        "children": [{
+                                                "id": 10,
+                                                "parentId": 7,
+                                                "title": "JDBC",
+                                                "path": null,
+                                                "children": []
+                                            },
+                                            {
+                                                "id": 11,
+                                                "parentId": 7,
+                                                "title": "Servlets",
+                                                "path": null,
+                                                "children": []
+                                            },
+                                            {
+                                                "id": 12,
+                                                "parentId": 7,
+                                                "title": "JSP",
+                                                "path": null,
+                                                "children": []
+                                            },
+                                            {
+                                                "id": 13,
+                                                "parentId": 7,
+                                                "title": "JSTL",
+                                                "path": null,
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": 8,
+                                        "parentId": 2,
+                                        "title": "Design Patterns",
+                                        "path": null,
+                                        "children": [{
+                                                "id": 14,
+                                                "parentId": 8,
+                                                "title": "Core Java Design Patterns",
+                                                "path": null,
+                                                "children": []
+                                            },
+                                            {
+                                                "id": 15,
+                                                "parentId": 8,
+                                                "title": "J2EE Design Patterns",
+                                                "path": null,
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": 9,
+                                        "parentId": 2,
+                                        "title": "API",
+                                        "path": null,
+                                        "children": [{
+                                                "id": 16,
+                                                "parentId": 9,
+                                                "title": "Struts",
+                                                "path": null,
+                                                "children": []
+                                            },
+                                            {
+                                                "id": 17,
+                                                "parentId": 9,
+                                                "title": "Hibernate",
+                                                "path": null,
+                                                "children": []
+                                            },
+                                            {
+                                                "id": 18,
+                                                "parentId": 9,
+                                                "title": "Spring Boot",
+                                                "path": null,
+                                                "children": [{
+                                                        "id": 20,
+                                                        "parentId": 18,
+                                                        "title": "Spring Batch",
+                                                        "path": null,
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "id": 68,
+                                                        "parentId": 18,
+                                                        "title": "Spring Rest",
+                                                        "path": null,
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "id": 69,
+                                                        "parentId": 18,
+                                                        "title": "Spring Data",
+                                                        "path": null,
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "id": 70,
+                                                        "parentId": 18,
+                                                        "title": "Spring Jdbc",
+                                                        "path": null,
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": 19,
+                                                "parentId": 9,
+                                                "title": "Microservices",
+                                                "path": null,
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 3,
+                                "parentId": 1,
+                                "title": "Frontend",
+                                "path": null,
+                                "children": [{
+                                        "id": 21,
+                                        "parentId": 3,
+                                        "title": "AngularJS",
+                                        "path": null,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 22,
+                                        "parentId": 3,
+                                        "title": "Angular",
+                                        "path": null,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 23,
+                                        "parentId": 3,
+                                        "title": "ReactJS",
+                                        "path": null,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 24,
+                                        "parentId": 3,
+                                        "title": "HTML",
+                                        "path": null,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 25,
+                                        "parentId": 3,
+                                        "title": "CSS",
+                                        "path": null,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 26,
+                                        "parentId": 3,
+                                        "title": "JavaScript",
+                                        "path": null,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 27,
+                                        "parentId": 3,
+                                        "title": "NodeJS",
+                                        "path": null,
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 4,
+                                "parentId": 1,
+                                "title": "Database",
+                                "path": null,
+                                "children": [{
+                                        "id": 28,
+                                        "parentId": 4,
+                                        "title": "MySQL",
+                                        "path": null,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 29,
+                                        "parentId": 4,
+                                        "title": "PostgreSQL",
+                                        "path": null,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 30,
+                                        "parentId": 4,
+                                        "title": "Oracle",
+                                        "path": null,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 31,
+                                        "parentId": 4,
+                                        "title": "SQLServer",
+                                        "path": null,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 32,
+                                        "parentId": 4,
+                                        "title": "DB2",
+                                        "path": null,
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 5,
+                                "parentId": 1,
+                                "title": "DevOps/TeamLead",
+                                "path": null,
+                                "children": [{
+                                        "id": 33,
+                                        "parentId": 5,
+                                        "title": "AWS",
+                                        "path": null,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 34,
+                                        "parentId": 5,
+                                        "title": "Jenkins",
+                                        "path": null,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 35,
+                                        "parentId": 5,
+                                        "title": "Jira",
+                                        "path": null,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 36,
+                                        "parentId": 5,
+                                        "title": "Version Control",
+                                        "path": null,
+                                        "children": [{
+                                                "id": 41,
+                                                "parentId": 36,
+                                                "title": "GIT",
+                                                "path": null,
+                                                "children": []
+                                            },
+                                            {
+                                                "id": 42,
+                                                "parentId": 36,
+                                                "title": "SVN",
+                                                "path": null,
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": 37,
+                                        "parentId": 5,
+                                        "title": "Deployment",
+                                        "path": null,
+                                        "children": [{
+                                                "id": 43,
+                                                "parentId": 37,
+                                                "title": "Tomcat",
+                                                "path": null,
+                                                "children": []
+                                            },
+                                            {
+                                                "id": 44,
+                                                "parentId": 37,
+                                                "title": "Weblogic",
+                                                "path": null,
+                                                "children": []
+                                            },
+                                            {
+                                                "id": 45,
+                                                "parentId": 37,
+                                                "title": "WebSphere",
+                                                "path": null,
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": 38,
+                                        "parentId": 5,
+                                        "title": "OS/File Transfer",
+                                        "path": null,
+                                        "children": [{
+                                                "id": 46,
+                                                "parentId": 38,
+                                                "title": "Putty",
+                                                "path": null,
+                                                "children": []
+                                            },
+                                            {
+                                                "id": 47,
+                                                "parentId": 38,
+                                                "title": "WinSCP",
+                                                "path": null,
+                                                "children": []
+                                            },
+                                            {
+                                                "id": 48,
+                                                "parentId": 38,
+                                                "title": "Linux",
+                                                "path": null,
+                                                "children": []
+                                            },
+                                            {
+                                                "id": 49,
+                                                "parentId": 38,
+                                                "title": "Windows",
+                                                "path": null,
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": 39,
+                                        "parentId": 5,
+                                        "title": "Other Programming Language",
+                                        "path": null,
+                                        "children": [{
+                                                "id": 50,
+                                                "parentId": 39,
+                                                "title": "Python",
+                                                "path": null,
+                                                "children": []
+                                            },
+                                            {
+                                                "id": 51,
+                                                "parentId": 39,
+                                                "title": "Ruby",
+                                                "path": null,
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": 40,
+                                        "parentId": 5,
+                                        "title": "Agile",
+                                        "path": null,
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }]
+                },
+                {
+                    "id": 115,
+                    "parentId": 113,
+                    "title": "Cleaning/Organizing Books, Pdf, Certificates, Code",
+                    "path": null,
+                    "children": []
+                }
+            ]
+        }
+    ],
+    "message": "Success",
+    "timestamp": "2021-07-08T09:24:21.702+00:00",
+    "status": 200
+}

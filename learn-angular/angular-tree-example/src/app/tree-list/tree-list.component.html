@@ -1,0 +1,14 @@
+<p>This is tree list.</p>
+
+<label>Tree Node Name : </label>
+<input type="text" class="form-control" [(ngModel)]="treeNodeName">
+<br>
+<button class="btn btn-primary" [disabled]="!allowNewTreeNode" (click)="onCreateNode()">
+Add New Tree Node
+</button>
+
+
+
+<p *ngIf="treeNodeCreated">{{ treeNodeCreationStatus }}</p>
+<app-tree></app-tree>
+<app-tree></app-tree>
