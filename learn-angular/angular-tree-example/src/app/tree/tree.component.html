@@ -18,13 +18,13 @@
     <div>
 
         <span *ngIf="treeNodeData.children.length>0" (click)="onNodeClick()" [ngClass]="{'caret-down':'showChildren===true','caret':'treeNodeData.children.length>0'}">
-            <b><i>{{treeNodeData.title}} : {{ showChildren }} : treeNodeData.children.length>0 && showChildren ==
-                    {{treeNodeData.children.length>0 && showChildren}}</i></b>
+            <!-- <b><i>{{treeNodeData.title}} : {{ showChildren }} : treeNodeData.children.length>0 && showChildren ==
+                    {{treeNodeData.children.length>0 && showChildren}}</i></b> -->
+                    <b><i>{{treeNodeData.title}}</i></b> - Parent id {{ treeNodeData.parentId }} - Id {{ treeNodeData.id }}
         </span>
 
         <span *ngIf="!(treeNodeData.children.length>0)">
-            <b><i>{{treeNodeData.title}} : {{ showChildren }} : treeNodeData.children.length>0 && showChildren ==
-                    {{treeNodeData.children.length>0 && showChildren}}</i></b>
+            <b><i>{{treeNodeData.title}}</i></b> - Parent id {{ treeNodeData.parentId }} - Id {{ treeNodeData.id }}
         </span>
 
         <ul *ngIf="treeNodeData.children.length>0 && showChildren" [ngClass]="{'active':'showChildren===true','nested':'treeNodeData.children.length>0'}">
