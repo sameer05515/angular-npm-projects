@@ -1,11 +1,37 @@
 <!-- <p>tree works!</p> -->
 
-<div>
-    <b>Tree Node name</b> : <b><i>{{treeNodeData.title}}</i></b>
-</div>
-<ul>
-    <li *ngFor="let node of treeNodeData.children">
-        <app-tree [treeNodeData]="node">
-        </app-tree>
-    </li>
-</ul>
+<!-- <div>
+    <ul>
+        <li>
+            <b>Tree Node name</b> : 
+            <b><i>{{treeNodeData.title}}</i></b>
+            <div *ngFor="let node of treeNodeData.children">
+                <app-tree [treeNodeData]="node">
+                </app-tree>
+            </div>
+            
+        </li>
+    </ul>
+</div> -->
+
+<li>
+    <div>
+
+        <span *ngIf="treeNodeData.children.length>0" (click)="onNodeClick()" [ngClass]="{'caret-down':'showChildren===true','caret':'treeNodeData.children.length>0'}">
+            <b><i>{{treeNodeData.title}} : {{ showChildren }} : treeNodeData.children.length>0 && showChildren ==
+                    {{treeNodeData.children.length>0 && showChildren}}</i></b>
+        </span>
+
+        <span *ngIf="!(treeNodeData.children.length>0)">
+            <b><i>{{treeNodeData.title}} : {{ showChildren }} : treeNodeData.children.length>0 && showChildren ==
+                    {{treeNodeData.children.length>0 && showChildren}}</i></b>
+        </span>
+
+        <ul *ngIf="treeNodeData.children.length>0 && showChildren" [ngClass]="{'active':'showChildren===true','nested':'treeNodeData.children.length>0'}">
+            <div *ngFor="let node of treeNodeData.children">
+                <app-tree [treeNodeData]="node">
+                </app-tree>
+            </div>
+        </ul>
+    </div>
+</li>

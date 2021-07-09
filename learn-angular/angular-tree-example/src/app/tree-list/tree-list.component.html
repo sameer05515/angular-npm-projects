@@ -11,10 +11,14 @@ Add New Tree Node
 
 <p *ngIf="treeNodeCreated">{{ treeNodeCreationStatus }}</p>
 
-<div *ngFor="let tData of totalAngularPackages">
+<ul id="myUL">
+    <div *ngFor="let tData of totalAngularPackages">
 
-    <app-tree [treeNodeData]="tData"> </app-tree>
-</div>
+        <app-tree [treeNodeData]="tData"> </app-tree>
+    </div>
+</ul>
+
+
 
 <!-- <app-tree></app-tree> -->
 
