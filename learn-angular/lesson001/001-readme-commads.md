@@ -16,7 +16,7 @@ ng serve
 
 ================================
 
-to add bootstrap
+# to add bootstrap
 npm install --save bootstrap@3
 
 edit angular.json
@@ -24,4 +24,5 @@ archtect->build styles
 `"node_modules/bootstrap/dist/css/bootstrap.min.css",`
 
 ============================
+
 
