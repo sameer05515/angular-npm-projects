@@ -1,4 +1,4 @@
-import { Component, Input,forwardRef, OnInit } from '@angular/core';
+import { Component, Input,forwardRef, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tree',
@@ -10,6 +10,8 @@ export class TreeComponent implements OnInit {
   treeNodeName:string=" My tree node name";
   showChildren:boolean=false;
 
+  @Output() nodeSelected=new EventEmitter<string>();
+
   @Input() treeNodeData:any;
 
   constructor() { }
@@ -19,6 +21,8 @@ export class TreeComponent implements OnInit {
 
   onNodeClick(){
     this.showChildren=!this.showChildren;
+    console.log("Selected one : "+this.treeNodeData.title);
+    this.nodeSelected.emit(this.treeNodeData.title);
     if(this.showChildren){
 
     }

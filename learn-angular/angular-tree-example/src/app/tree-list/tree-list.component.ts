@@ -13,12 +13,19 @@ export class TreeListComponent implements OnInit {
   treeNodeParentId: number = 0;
   treeNodeCreated = false;
   totalAngularPackages: any;
+  selectedNode:string="";
 
   constructor(private http: HttpClient) {
     setTimeout(() => {
       this.allowNewTreeNode = true;
     }, 5000);
   }
+
+  // onNodeSelected(title:string){
+  //   console.log("Selected Node : "+title)
+  //   this.selectedNode=title;
+
+  // }
 
   ngOnInit() {
     // Simple GET request with response type <any>
