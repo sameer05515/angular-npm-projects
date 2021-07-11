@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-sm-12">
+        <p>topic-widget works!</p>
+    </div>
+    <div class="col-sm-6">
+        <app-topic-list [topicList]="allTopics" (topicWasSelected)="onTopicSelected($event)"></app-topic-list>
+    </div>
+    <div class="col-sm-6">
+        <app-topic-details [selectedTopic]="selectedTopicTitle">
+
+        </app-topic-details>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="col-sm-12">
+        <ul>
+            <li *ngFor="let topicEl of topicList">
+                <app-topic-component [topic]="topicEl" (click)="onSelect(topicEl)"></app-topic-component>
+            </li>
+        </ul>
+        Selected Topic : {{selectedTopic|json}}
+    </div>
+</div>
