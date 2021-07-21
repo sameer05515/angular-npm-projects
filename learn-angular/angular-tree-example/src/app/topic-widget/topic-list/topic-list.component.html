@@ -2,7 +2,8 @@
     <div class="col-sm-12">
         <ul>
             <li *ngFor="let topicEl of topicList">
-                <app-topic-component [topic]="topicEl" (click)="onSelect(topicEl)"></app-topic-component>
+                <app-topic-component [topic]="topicEl" (click)="onSelect(topicEl)" [ngClass]="{'selected' : (selectedTopic)&&(selectedTopic.id===topicEl.id)}"></app-topic-component>
+                <!-- [ngClass]="{'selected' : selectedTopic.id===topicEl.id}" -->
             </li>
         </ul>
         Selected Topic : {{selectedTopic|json}}
