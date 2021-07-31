@@ -1,0 +1,17 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@npm_angular_bazel//:index.bzl", "ng_module")
+
+ng_module(
+    name = "src",
+    srcs = glob(["*.ts"]),
+    tsconfig = "//:tsconfig.json",
+    assets = ["consumer.html"],
+    deps = [
+            "@npm//rxjs",
+            "@npm//@angular/core",
+            "@npm//@angular/router",
+            "@npm//@angular/forms",
+            "//src/apps/shared-components/shared"     
+    ]
+)

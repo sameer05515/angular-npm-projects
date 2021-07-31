@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE web-app PUBLIC "-//Oracle Corporation//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <servlet>
+    <servlet-name>cars</servlet-name>
+    <servlet-class>backend.api.CarsServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>cars</servlet-name>
+    <url-pattern>/cars</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>persons</servlet-name>
+    <servlet-class>backend.api.PersonServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>persons</servlet-name>
+    <url-pattern>/persons</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>logs</servlet-name>
+    <servlet-class>backend.api.LogServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>logs</servlet-name>
+    <url-pattern>/logs</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>friends</servlet-name>
+    <servlet-class>backend.api.FriendServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>friends</servlet-name>
+    <url-pattern>/friends</url-pattern>
+  </servlet-mapping>
+
+</web-app>
+
+

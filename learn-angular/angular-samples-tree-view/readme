@@ -1,0 +1,16 @@
+**** 07/27/2020 - These samples are no longer maintained ****
+
+
+
+These samples use Angular 9.0.0 and SvelteJS with backends in Node/Express and Go. Everything is built in the same Bazel build.
+
+Here are the prerequisites for running the project:
+
+1) npm i
+
+2) npm start
+
+This starts a bazel build with file watching (iBazel).
+
+The application is hosted at http://localhost:3000
+

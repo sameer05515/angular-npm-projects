@@ -1,0 +1,100 @@
+package(default_visibility = ["//visibility:public"])
+load("@npm_bazel_rollup//:index.bzl", "rollup_bundle")
+load("@npm_angular_bazel//:index.bzl", "ng_module")
+load("@npm//@babel/cli:index.bzl", "babel")
+load("@npm_bazel_terser//:index.bzl", "terser_minified")
+
+ANGULAR_IMPORTS = [
+    "@npm//@angular/animations",
+    "@npm//@angular/forms",
+    "@npm//@angular/router",
+]
+
+ng_module(
+    name = "src",
+    srcs = [
+      "main.ts", 
+      "app.module.ts",
+      "app.component.ts",
+      "app.routes.ts"
+    ],
+    assets = ["demo-app.html"],
+    tsconfig = "//:tsconfig.json",
+    deps = ANGULAR_IMPORTS + [
+            "@npm//rxjs",
+            "@npm//@types/node",
+            "@npm//@types/react",
+            "@npm//@angular/core",
+            "@npm//@angular/platform-browser",
+            "//src/apps/shared-components:src",
+            "//src/apps/shared-components/about:src",
+            "//src/apps/shared-components/spreadsheet:src",
+            "//src/apps/shared-components/jquery-integration:src",
+            "//src/apps/shared-components/lazy-loaded-tree-view:src",
+            "//src/apps/shared-components/dependency-injection:src",
+            "//src/apps/shared-components/rxjs-streams:src",
+            "//src/apps/shared-components/rxjs-caching:src",
+            "//src/apps/shared-components/algorithms:src",
+            "//src/apps/shared-components/log-tail:src",
+            "//src/apps/shared-components/rxjs-buffering:src",
+            "//src/apps/shared-components/survey:src",
+            "//src/apps/shared-components/pub-sub:src",
+            "//src/apps/shared-components/text-editor:src",
+            "//src/apps/shared-components/address-form:src",
+            "//src/apps/shared-components/change-detection:src",
+            "//src/apps/shared-components/input-controls:src",
+            "//src/apps/shared-components/tree-view:src",
+            "//src/apps/shared-components/grid:src",
+            "//src/apps/shared-components/access-child-components:src",
+            "//src/apps/shared-components/contact-list:src",
+            "//src/apps/shared-components/bound-textbox:src",
+            "//src/apps/shared-components/input-output:src",
+            "//src/apps/shared-components/rxjs-error-handling:src",
+            "//src/apps/shared-components/svelte-integration:src"
+    ]
+)
+
+rollup_bundle(
+    name = "bundle-es2015",
+    entry_points = {":main.ts": "index"},
+    config_file = "rollup.config.js",
+    deps = [
+        ":src",
+        "@npm//@angular/common",
+        "@npm//@angular/core",
+        "@npm//@angular/platform-browser",
+        "@npm//@angular/router",
+        "@npm//rxjs",
+        "@npm//rollup-plugin-commonjs",
+        "@npm//rollup-plugin-node-resolve",
+    ],
+)
+
+babel(
+    name = "bundle-es5",
+    args = [
+        "$(execpath :bundle-es2015)",
+        "--no-babelrc",
+        "--source-maps",
+        "--presets=@babel/preset-env",
+        "--out-dir",
+        "$(@D)",
+    ],
+    data = [
+        ":bundle-es2015",
+        "@npm//@babel/preset-env",
+    ],
+    output_dir = True,
+)
+
+terser_minified(
+    name = "bundle-es5.min",
+    src = ":bundle-es5",
+)
+
+terser_minified(
+    name = "bundle-es2015.min",
+    src = ":bundle-es2015",
+)
+
+load("@npm_bazel_terser//:index.bzl", "terser_minified")

@@ -1,0 +1,13 @@
+node_modules
+
+.vscode
+npm-debug.log
+
+dist
+.DS_Store
+bazel-*
+yarn-error.log
+src/**/*.js
+!src/**/svelte-demo/**/*.js
+
+!src/apps/demo-app/rollup.config.js

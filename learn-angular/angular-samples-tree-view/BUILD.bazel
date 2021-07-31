@@ -1,0 +1,14 @@
+package(default_visibility = ["//visibility:public"])
+
+alias(
+    name = "install",
+    actual = "@nodejs//:yarn",
+)
+
+# This export allows targets in other packages to reference files that live
+# in this package.
+exports_files([
+    # Let ts_library targets reference the root tsconfig.json file
+    "tsconfig.json",
+    "node_modules/bootstrap/dist/css/bootstrap.min.css"
+])
