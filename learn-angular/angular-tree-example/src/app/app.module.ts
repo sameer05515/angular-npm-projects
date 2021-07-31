@@ -11,6 +11,7 @@ import { TopicWidgetComponent } from './topic-widget/topic-widget.component';
 import { TopicListComponent } from './topic-widget/topic-list/topic-list.component';
 import { TopicComponentComponent } from './topic-widget/topic-list/topic-component/topic-component.component';
 import { TopicDetailsComponent } from './topic-widget/topic-details/topic-details.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { TopicDetailsComponent } from './topic-widget/topic-details/topic-detail
     TopicWidgetComponent,
     TopicListComponent,
     TopicComponentComponent,
-    TopicDetailsComponent
+    TopicDetailsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
