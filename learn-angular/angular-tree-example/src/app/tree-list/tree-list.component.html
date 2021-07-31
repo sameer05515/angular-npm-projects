@@ -1,36 +1,33 @@
-<div class="container">
+<div class="row">
+    <p>This is tree list.</p>
 
-    <div class="row">
-        <p>This is tree list.</p>
-
-        <label>Tree Node Name : </label>
-        <input type="text" class="form-control" [(ngModel)]="treeNodeName">
-        <label>Tree Node Parent Id : </label>
-        <input type="number" class="form-control" [(ngModel)]="treeNodeParentId">
-        <br>
-        <button class="btn btn-primary" [disabled]="!allowNewTreeNode" (click)="onCreateNode()">
+    <label>Tree Node Name : </label>
+    <input type="text" class="form-control" [(ngModel)]="treeNodeName">
+    <label>Tree Node Parent Id : </label>
+    <input type="number" class="form-control" [(ngModel)]="treeNodeParentId">
+    <br>
+    <button class="btn btn-primary" [disabled]="!allowNewTreeNode" (click)="onCreateNode()">
         Add New Tree Node
         </button>
 
 
 
-        <p *ngIf="treeNodeCreated">{{ treeNodeCreationStatus }}</p>
+    <p *ngIf="treeNodeCreated">{{ treeNodeCreationStatus }}</p>
 
 
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <ul id="myUL">
+            <!-- <div > -->
+            <app-tree *ngFor="let tData of totalAngularPackages" [treeNodeData]="tData" (nodeSelected)="selectedNode=$event"> </app-tree>
+            <!-- </div> -->
+        </ul>
     </div>
 
-    <div class="row">
-        <div class="col-sm-6">
-            <ul id="myUL">
-                <!-- <div > -->
-                <app-tree *ngFor="let tData of totalAngularPackages" [treeNodeData]="tData" (nodeSelected)="selectedNode=$event"> </app-tree>
-                <!-- </div> -->
-            </ul>
-        </div>
-
-        <div class="col-sm-6">
-            <p> <b>Current selected node</b> {{ selectedNode }}
-            </p>
-        </div>
+    <div class="col-sm-6">
+        <p> <b>Current selected node</b> {{ selectedNode }}
+        </p>
     </div>
 </div>
