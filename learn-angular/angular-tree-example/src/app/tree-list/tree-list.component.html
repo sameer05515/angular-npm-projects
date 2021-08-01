@@ -19,11 +19,15 @@
 
 <div class="row">
     <div class="col-sm-6">
-        <ul id="myUL">
-            <!-- <div > -->
-            <app-tree *ngFor="let tData of totalAngularPackages" [treeNodeData]="tData" (nodeSelected)="selectedNode=$event"> </app-tree>
-            <!-- </div> -->
-        </ul>
+        <!-- <ul id="myUL">
+            
+            <app-tree *ngFor="let tData of treeList" [treeNodeData]="tData" (nodeSelected)="selectedNode=$event"> </app-tree>
+            
+        </ul> -->
+
+        <div class="tree-wrapper">
+            <app-tree [treeData]="treeList"></app-tree>
+        </div>
     </div>
 
     <div class="col-sm-6">

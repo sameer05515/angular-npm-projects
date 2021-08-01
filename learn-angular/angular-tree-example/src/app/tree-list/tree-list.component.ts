@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { TreeApiResponse } from '../shared/tree-api-response.model';
+import { TreeNode } from '../shared/tree-node.model';
 
 @Component({
   selector: 'app-tree-list',
@@ -12,50 +14,33 @@ export class TreeListComponent implements OnInit {
   treeNodeName: string = '';
   treeNodeParentId: number = 0;
   treeNodeCreated = false;
-  totalAngularPackages: any;
+  treeList: TreeNode[]=[];
   selectedNode:string="";
 
   constructor(private http: HttpClient) {
     setTimeout(() => {
       this.allowNewTreeNode = true;
     }, 5000);
-  }
-
-  // onNodeSelected(title:string){
-  //   console.log("Selected Node : "+title)
-  //   this.selectedNode=title;
-
-  // }
+  } 
 
   ngOnInit() {
-    // Simple GET request with response type <any>
-    // this.http.get<any>('http://127.0.0.1:8080/ParentChildRelationsTopics/topics/tree/data').subscribe(data => {
-    //     this.totalAngularPackages = data.data;
-    //     // console.log(data);
-    // })
-
-    // this.http.get<any>('./assets/tree-response.json').subscribe(data => {
-    //     this.totalAngularPackages = data.data;
-    //     // console.log(data);
-    // })
-
+    
     this.getAllNodes();
   }
 
   getAllNodes() {
-    // Simple GET request with response type <any>
-    // this.http.get<any>('http://127.0.0.1:8080/ParentChildRelationsTopics/topics/tree/data').subscribe(data => {
-    //     this.totalAngularPackages = data.data;
-    //     // console.log(data);
-    // })
+    // this.http.get<TreeApiResponse>('./assets/tree-response.json').subscribe(response => {
+    //     this.treeList = <TreeNode[]>response.data;
+    //     console.log(this.treeList);
+    // });
 
     this.http
-      .get<any>(
+      .get<TreeApiResponse>(
         'http://127.0.0.1:8080/ParentChildRelationsTopics/topics/tree/data'
       )
-      .subscribe((data) => {
-        this.totalAngularPackages = data.data;
-        // console.log(data);
+      .subscribe((response) => {
+        this.treeList = response.data;
+        // console.log(response);
       });
   }
 
@@ -75,4 +60,9 @@ export class TreeListComponent implements OnInit {
         this.getAllNodes();
       });
   }
+
+  // onNodeSelected(title:string){
+  //   console.log("Selected Node : "+title)
+  //   this.selectedNode=title;
+  // }
 }
