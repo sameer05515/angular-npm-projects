@@ -7,7 +7,8 @@ import { TreeListComponent } from './tree-list/tree-list.component';
 const routes: Routes = [
   { path: '', redirectTo: '/tree-list', pathMatch: 'full' },
   { path: 'tree-list', component: TreeListComponent },
-  { path: 'topic-list', component: TopicWidgetComponent }
+  { path: 'topic-list', component: TopicWidgetComponent },
+  {path: '**', redirectTo: '/tree-list'}
 ];
 
 @NgModule({
