@@ -1,0 +1,442 @@
+<p>MySQL is undoubtedly one of the top picks for a relational database in every Node developer&rsquo;s technology stack. Node&rsquo;s ease of creating backend APIs paired with MySQL&rsquo;s ability to support complex query operations provides a simple way for developers to build advanced web backends.</p>
+<p>In this tutorial, we are going to develop a simple REST API for an online store with Express framework. MySQL is our choice of database. Instead of using simple Javascript for the implementation, we decided to build this API using Typescript.</p>
+<p>Typescript type support leaves little room for developers to misuse types. It helps us write cleaner, reusable code. If you are a beginner to Typescript or want to brush up your memory of the language, read our guide to&nbsp;<a href="https://livecodestream.dev/post/what-why-and-how-of-typescript-for-javascript-developers/" target="_blank" rel="noopener">Typescript for Javascript developers</a>&nbsp;before going to the next step.</p>
+<p>With the initial introduction out of the way, let&rsquo;s get started now.</p>
+<hr />
+<h2 id="before-we-begin">Before we begin&hellip;</h2>
+<p>Before we begin the tutorial, make sure you have all the tools we need set up. Assuming you already have Node.js installed,&nbsp;<a href="https://www.mysql.com/downloads/" target="_blank" rel="noopener">install MySQL on your device</a>&nbsp;before continuing.</p>
+<h3 id="set-up-the-database">Set up the database</h3>
+<p>As I mentioned before, we are creating an API for a simple online store that stores a list of products and registered customers in its database. When customers place product orders, their details are also stored in this database.</p>
+<p>In total, our database schema has 3 tables: Product, Customer, and ProductOrder.</p>
+<figure class="" data-src="/post/your-guide-to-building-a-nodejs-typescript-rest-api-with-mysql/data-model_hu875ab84c1495d7b7d68bec1bea36020e_19784_700x0_resize_box_3.png"><img class="lazy loaded" src="https://livecodestream.dev/post/your-guide-to-building-a-nodejs-typescript-rest-api-with-mysql/data-model_hu875ab84c1495d7b7d68bec1bea36020e_19784_700x0_resize_box_3.png" />
+<figcaption>
+<p>Data Model</p>
+</figcaption>
+</figure>
+<p>I am going to create them using regular SQL queries. If you want, you can go ahead and use a tool GUI tool to create the database schema.</p>
+<p>Make sure your MySQL server is running and then run this command on the command-line. (You&rsquo;d have to add MySQL to environment variables to directly use the mysql command).</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-text" data-lang="text">mysql -u &lt;username&gt; -p &lt;password&gt;
+</code></pre>
+</div>
+<p>It will take you to the MySQL shell where you can directly run SQL queries on the database.</p>
+<p>Now, we can create a new database for our project.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-text" data-lang="text">create database OnlineStore
+</code></pre>
+</div>
+<p>Use the following command to switch to the newly created database.</p>
+<pre><code>use OnlineStore;
+</code></pre>
+<p>Then, run the following queries to create the tables we need.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-sql" data-lang="sql">CREATE TABLE Product (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    description VARCHAR(255),
+    instock_quantity INT,
+    price DECIMAL(8, 2)
+);
+
+CREATE TABLE Customer (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    password VARCHAR(255),
+    email VARCHAR(255) UNIQUE
+);
+
+CREATE TABLE ProductOrder (
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT,
+    customer_id INT,
+    product_quantity INT,
+    FOREIGN KEY (product_id) REFERENCES Product(id),
+    FOREIGN KEY (customer_id) REFERENCES Customer(id)
+);
+</code></pre>
+</div>
+<p>Use queries similar to the ones below to enter some data into the created tables.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-sql" data-lang="sql">INSERT INTO Product VALUES (1, "Apple MacBook Pro", "15 inch, i7, 16GB RAM", 5, 667.00);
+
+INSERT INTO Customer VALUES (1, "Anjalee", "2w33he94yg4mx88j9j2hy4uhd32w", "anjalee@gmail.com");
+
+INSERT INTO ProductOrder VALUES (1, 1, 1, 1);
+</code></pre>
+</div>
+<p>Great! Our database schema is now complete. We can head over to Node.js and start with the implementation of the API in the next step.</p>
+<hr />
+<h2 id="set-up-nodejs-project-environment">Set up Node.js Project Environment</h2>
+<p>As usual, we use the&nbsp;<code>npm init</code>&nbsp;command to initialize our Node.js project as the first step of setup.</p>
+<p>Next, we have to install the npm packages we&rsquo;ll be using in this project. There are quite a few. We&rsquo;ll install the project dependencies first.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-text" data-lang="text">npm install express body-parser mysql2 dotenv
+</code></pre>
+</div>
+<p>Here, we use&nbsp;<code>dotenv</code>&nbsp;to import environment variables to the project and&nbsp;<code>mysql2</code>&nbsp;to manage the database connection.</p>
+<p>Then, install Typescript as a development dependency.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-text" data-lang="text">npm install typescript --save-dev
+</code></pre>
+</div>
+<p>We also have to install the Typescript type definitions for the packages we are using in the project. Since most of these packages do not have type definitions, we use the @types npm namespace, where relevant type definitions are hosted in the&nbsp;<a href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank" rel="noopener">Definitely Typed</a>&nbsp;project.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-text" data-lang="text">npm install @types/node @types/express @types/body-parser @types/mysql @types/dotenv --save-dev
+</code></pre>
+</div>
+<p>Next, we should initialize our project as a Typescript project. For this, run the following command.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-text" data-lang="text">npx tsc --init
+</code></pre>
+</div>
+<p>This will add the&nbsp;<code>tsconfig.json</code>&nbsp;file to your project. We use it to configure Typescript options related to the project.</p>
+<p>When you open the&nbsp;<code>tsconfig.json</code>&nbsp;file, you will see a bunch of commented code. For our project, we need to uncomment the following options and set them to the values shown below.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-text" data-lang="text">"compilerOptions": {
+    "target": "es6",   
+    "module": "commonjs",
+    "outDir": "dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+}
+</code></pre>
+</div>
+<p>These options will be considered at the time Typescript is compiled into Javascript. The&nbsp;<code>outDir</code>&nbsp;we have provided here is where the compiled&nbsp;<code>.js</code>&nbsp;files are going to be stored.</p>
+<p>As the final step, we have to modify the start script in the package.json file to compile Typescript before starting the Node app.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-text" data-lang="text">"scripts": {
+    "start": "tsc &amp;&amp; node dist/app.js",
+},
+</code></pre>
+</div>
+<p>The&nbsp;<code>dist/app.js</code>&nbsp;file is the compiled version of the&nbsp;<code>app.ts</code>&nbsp;file we are using to write our code.</p>
+<hr />
+<h2 id="the-project-directory-structure"><span id="ezoic-pub-ad-placeholder-134" class="ezoic-adpicker-ad"></span><span id="div-gpt-ad-livecodestream_dev-box-4-0" class="ezoic-ad"></span>The project directory structure</h2>
+<p>Our project has a simple directory structure similar to the following chart.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-text" data-lang="text">|-.env
+|-package.json
+|-tsconfig.json
+|-dist/
+|-app.ts
+|-db.ts
+|-models/
+|-routes/
+|-types/
+</code></pre>
+</div>
+<hr />
+<h2 id="create-the-env-file">Create the .env file</h2>
+<p>We use the .env file store the environment variables of the app.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-text" data-lang="text">PORT=3000
+DB_HOST="localhost"
+DB_USER="username"
+DB_PWD="****"
+DB_NAME="OnlineStore"
+</code></pre>
+</div>
+<p>As you can see, most of the environment variables are related to the database we previously created.</p>
+<hr />
+<h2 id="define-new-types-for-the-api">Define new types for the API</h2>
+<p>We have to define new Typescript types for Product, Customer, and Order objects. We are storing all the type files in the types directory.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-typescript" data-lang="typescript">//file types/customer.ts
+
+export interface BasicProduct {
+  id: number,
+}
+
+export interface Product extends BasicProduct {
+  name: string,
+  description: string,
+  instockQuantity: number,
+  price: number
+}
+</code></pre>
+</div>
+<p>Here, we have created two product types. The first type, BasicProduct, contains only the product ID in its fields. The second type, Product, extends the first interface and creates a type with elaborate details.</p>
+<p>In our app sometimes we want to process only the ID of a product. Some other times we want to process a detailed product object. For this reason, we use two product types and one extends the other. You&rsquo;ll see a similar behavior when defining Customer and Order types.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-typescript" data-lang="typescript">//file types/customer.ts
+
+export interface BasicCustomer {
+  id: number,
+}
+
+export interface Customer extends BasicCustomer{
+  name: string,
+  email?: string,
+  password?: string
+}
+</code></pre>
+</div>
+<p>When defining the order types, we can use previously created customer and product types as the types of customer and product fields respectively. In the three order types we define, the relevant types are used for customer and product fields.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-typescript" data-lang="typescript">//file types/order.ts
+
+import {BasicProduct, Product} from "./product";
+import {BasicCustomer, Customer} from "./customer";
+
+export interface BasicOrder {
+  product: BasicProduct,
+  customer: BasicCustomer,
+  productQuantity: number
+}
+
+export interface Order extends BasicOrder {
+  orderId: number
+}
+
+export interface OrderWithDetails extends Order{
+  product: Product,
+  customer: Customer,
+}
+</code></pre>
+</div>
+<p>The BasicOrder type which is defined without the id is useful when creating an order for the first time (because the new order doesn&rsquo;t have an ID yet).</p>
+<hr />
+<h2 id="connect-to-the-database"><span id="ezoic-pub-ad-placeholder-129" class="ezoic-adpicker-ad"></span>Connect to the database</h2>
+<p>With the help of mysql2 package, it&rsquo;s an easy step to connect to the database we created before.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-typescript" data-lang="typescript">import mysql from "mysql2";
+import * as dotenv from "dotenv";
+dotenv.config();
+
+export const db = mysql.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PWD,
+  database: process.env.DB_NAME
+});
+</code></pre>
+</div>
+<p>We export the established connection object to make it easy to define database operations for different types separately.</p>
+<hr />
+<h2 id="define-database-operations"><span id="ezoic-pub-ad-placeholder-124" class="ezoic-adpicker-ad"></span><span id="div-gpt-ad-livecodestream_dev-large-leaderboard-2-0" class="ezoic-ad"></span>Define database operations</h2>
+<p>Next, let&rsquo;s create functions for create, findOne, findAll, and update operations for the database. I&rsquo;m only implementing the operations related to order type. But you can implement these operations for other data types as well.</p>
+<p>Note that we are going to write plain SQL statements for this task. If you want to use an ORM instead of manually writing the statenments, Node offers several ORMs compatible with Typescript like TypeORM and Sequelize.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-typescript" data-lang="typescript">First, import the objects we will need for the implementation.
+
+//file models/order.ts
+
+import {BasicOrder, Order, OrderWithDetails} from "../types/order";
+import {db} from "../db";
+import { OkPacket, RowDataPacket } from "mysql2";
+</code></pre>
+</div>
+<p>Next, let&rsquo;s implement the create function. It is used to insert a new record of an order into the ProductRecord table.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-typescript" data-lang="typescript">export const create = (order: BasicOrder, callback: Function) =&gt; {
+  const queryString = "INSERT INTO ProductOrder (product_id, customer_id, product_quantity) VALUES (?, ?, ?)"
+
+  db.query(
+    queryString,
+    [order.product.id, order.customer.id, order.productQuantity],
+    (err, result) =&gt; {
+      if (err) {callback(err)};
+
+      const insertId = (&lt;OkPacket&gt; result).insertId;
+      callback(null, insertId);
+    }
+  );
+};
+</code></pre>
+</div>
+<p>We use the imported db object to query the database and return the insertId of the order record through a callback. Since the returned result is a union of several types, we do a simple casting to convert it to OkPacket type, the type returned for insert operations.</p>
+<p>When passing a SQL statements to the query function, always be careful to not use the user-provided inputs directly in the string. It&rsquo;s a practice that makes your system vulnerable to SQL injection attacks. Instead, use the ? symbol in places where variables should be added, and pass the variables as an array to the query function.</p>
+<p>If you are unfamiliar with SQL statements, refer to the&nbsp;<a href="https://dev.mysql.com/doc/refman/8.0/en/dynindex-statement.html" target="_blank" rel="noopener">official MySQL documentation</a>&nbsp;to understand the basic insert, select, update statements we have used in this tutorial.</p>
+<p>Next, let&rsquo;s implement the findOne function which selects a record from the ProductOrder table based on the order ID.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-typescript" data-lang="typescript">export const findOne = (orderId: number, callback: Function) =&gt; {
+
+  const queryString = `
+    SELECT 
+      o.*,
+      p.*,
+      c.name AS customer_name,
+      c.email
+    FROM ProductOrder AS o
+    INNER JOIN Customer AS c ON c.id=o.customer_id
+    INNER JOIN Product AS p ON p.id=o.product_id
+    WHERE o.order_id=?`
+    
+  db.query(queryString, orderId, (err, result) =&gt; {
+    if (err) {callback(err)}
+    
+    const row = (&lt;RowDataPacket&gt; result)[0];
+    const order: OrderWithDetails =  {
+      orderId: row.order_id,
+      customer: {
+        id: row.cusomer_id,
+        name: row.customer_name,
+        email: row.email
+      },
+      product: {
+        id: row.product_id,
+        name: row.name,
+        description: row.description,
+        instockQuantity: row.instock_quantity,
+        price: row.price
+      },
+      productQuantity: row.product_quantity
+    }
+    callback(null, order);
+  });
+}
+</code></pre>
+</div>
+<p>Here too, we follow a similar process to the create function. In the SQL statement, we have to join ProductRecord, Customer, Product tables to retrieve complete records of the customer and the product included in the order. We use the foreign keys defined in the OrderProduct table to do the joining.</p>
+<p>After retrieving the data, we have to create an object of the Order type. Since we are retrieving details of both product and customer objects, we choose OrderWithDetails as our type from the 3 order types we defined before.</p>
+<p>We can now implement the other two database operations, findAll and update, following the same pattern.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-typescript" data-lang="typescript">export const findAll = (callback: Function) =&gt; {
+  const queryString = `
+    SELECT 
+      o.*, 
+      p.*,
+      c.name AS customer_name,
+      c.email
+    FROM ProductOrder AS o 
+    INNER JOIN Customer AS c ON c.id=o.customer_id
+    INNER JOIN Product AS p ON p.id=o.product_id`
+
+  db.query(queryString, (err, result) =&gt; {
+    if (err) {callback(err)}
+
+    const rows = &lt;RowDataPacket[]&gt; result;
+    const orders: Order[] = [];
+
+    rows.forEach(row =&gt; {
+      const order: OrderWithDetails =  {
+        orderId: row.order_id,
+        customer: {
+          id: row.customer_id,
+          name: row.customer_name,
+          email: row.email
+        },
+        product: {
+          id: row.product_id,
+          name: row.name,
+          description: row.description,
+          instockQuantity: row.instock_quantity,
+          price: row.price
+        },
+        productQuantity: row.product_quantity
+      }
+      orders.push(order);
+    });
+    callback(null, orders);
+  });
+}
+
+export const update = (order: Order, callback: Function) =&gt; {
+  const queryString = `UPDATE ProductOrder SET product_id=?, product_quantity=? WHERE order_id=?`;
+
+  db.query(
+    queryString,
+    [order.product.id, order.productQuantity, order.orderId],
+    (err, result) =&gt; {
+      if (err) {callback(err)}
+      callback(null);
+    }
+  );
+}
+</code></pre>
+</div>
+<p>With that, we have completed the functions for order-related database operations.</p>
+<hr />
+<h2 id="implement-the-routes-handlers"><span id="ezoic-pub-ad-placeholder-135" class="ezoic-adpicker-ad"></span>Implement the routes handlers</h2>
+<p>As the next step, we are going to implement the route handler for the&nbsp;<code>/orders</code>&nbsp;endpoint. You can follow the pattern we use here to implement the&nbsp;<code>/customer</code>&nbsp;and&nbsp;<code>/product</code>&nbsp;endpoints later.</p>
+<p>For our REST API, we are going to define 4 endpoints to send requests from the client-side.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-text" data-lang="text">//get all order objects
+GET orders/
+
+//create a new order
+POST orders/
+
+//get order by order ID
+GET orders/:id
+
+//update the order given by order ID
+PUT orders/:id
+</code></pre>
+</div>
+<p>Since we are using the express Router to define the routes, we can use the paths relative to the /orders route in the following implementation.</p>
+<p>Since we implemented the data retrieving logic in the database model, in the route handler, we only have to get that data using the relevant functions and pass them to the client side.</p>
+<p>Let&rsquo;s add the route handling logic to the orderRouter.ts file.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-typescript" data-lang="typescript">import express, {Request, Response} from "express";
+import * as orderModel from "../models/order";
+import {Order, BasicOrder} from "../types/order";
+const orderRouter = express.Router();
+
+orderRouter.get("/", async (req: Request, res: Response) =&gt; {
+  orderModel.findAll((err: Error, orders: Order[]) =&gt; {
+    if (err) {
+      return res.status(500).json({"errorMessage": err.message});
+    }
+
+    res.status(200).json({"data": orders});
+  });
+});
+
+orderRouter.post("/", async (req: Request, res: Response) =&gt; {
+  const newOrder: BasicOrder = req.body;
+  orderModel.create(newOrder, (err: Error, orderId: number) =&gt; {
+    if (err) {
+      return res.status(500).json({"message": err.message});
+    }
+
+    res.status(200).json({"orderId": orderId});
+  });
+});
+
+orderRouter.get("/:id", async (req: Request, res: Response) =&gt; {
+  const orderId: number = Number(req.params.id);
+  orderModel.findOne(orderId, (err: Error, order: Order) =&gt; {
+    if (err) {
+      return res.status(500).json({"message": err.message});
+    }
+    res.status(200).json({"data": order});
+  })
+});
+
+orderRouter.put("/:id", async (req: Request, res: Response) =&gt; {
+  const order: Order = req.body;
+  orderModel.update(order, (err: Error) =&gt; {
+    if (err) {
+      return res.status(500).json({"message": err.message});
+    }
+
+    res.status(200).send();
+  })
+});
+
+export {orderRouter};
+</code></pre>
+</div>
+<h3 id="put-everything-together-in-appts">Put everything together in app.ts</h3>
+<p>We have now completed adding the internal logic of our API. The only thing left to do is putting everything together in the app.ts file, the entry point to our API, and creating the server that listens to and responds to requests.</p>
+<div class="highlight">
+<pre tabindex="0"><code class="language-typescript" data-lang="typescript">import * as dotenv from "dotenv";
+import express from "express";
+import * as bodyParser from "body-parser";
+import {orderRouter} from "./routes/orderRouter";
+
+const app = express();
+dotenv.config();
+
+app.use(bodyParser.json());
+app.use("/orders", orderRouter);
+
+app.listen(process.env.PORT, () =&gt; {
+console.log("Node server started running");
+});
+</code></pre>
+</div>
+<p>That&rsquo;s it! We have created our simple Node.js REST API with MYSQL and Typescript in no time.</p>
