@@ -31,7 +31,10 @@ const taskRouter_1 = require("./routes/tasks/taskRouter");
 const wordRouter_1 = require("./routes/words/wordRouter");
 const app = express_1.default();
 dotenv.config();
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:4200'];
+const allowedOrigins = ['http://localhost:3000',
+    'http://localhost:4200',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:4200'];
 const options = {
     origin: allowedOrigins
 };
