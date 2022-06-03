@@ -1,0 +1,39 @@
+
+<div style="text-align: right ; margin-right: 40px;">
+
+  <h2>  <a (click)= "adminService.logout()">Logout</a> <br> </h2>
+  
+</div>
+
+<div style="text-align: center ; margin-right: 40px;">
+
+  <h2>  <a (click)="getAdminData()" >Get Admin Details</a> <br> </h2>
+  
+</div>
+
+
+<div *ngIf="haveData > 0 && dataRequest">
+    <table class="table table-responsive table-striped">
+
+        <tr>
+          <th>Email ID</th>
+          <th>Name</th>
+          <th>Password</th>
+          <th>Role</th>
+        </tr>
+        
+        <ng-container *ngFor = "let item of data">
+            <tr>
+              <td>{{item.emailId}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.password}}</td>
+              <td>{{item.role}}</td>
+            </tr>
+        </ng-container>
+  
+      </table>
+</div>
+
+<div *ngIf="haveData == 0 && dataRequest">
+    Don't have Data.
+</div>

@@ -1,0 +1,42 @@
+app-forms-page .container {
+  margin-top: 50px;
+}
+app-forms-page .section-title {
+  margin-bottom: 20px;
+}
+app-forms-page .user-details-container {
+  padding: 20px;
+  text-align: center;
+}
+app-forms-page .user-details-container .user-image {
+  width: 100%;
+  border-radius: 50%;
+}
+app-forms-page .user-details-container .user-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 30px;
+  display: block;
+}
+app-forms-page .user-details-container .user-bio {
+  font-size: 12px;
+  margin-top: 20px;
+  display: block;
+  color: rgba(0, 0, 0, 0.70);
+}
+app-forms-page .full-width {
+  width: 100%;
+  margin-bottom: 10px;
+}
+app-forms-page .error-message {
+  font-size: 12px;
+}
+app-forms-page .double-line-hint .mat-input-hint-wrapper {
+  flex-wrap: wrap;
+}
+app-forms-page .double-line-hint .mat-input-hint-wrapper .hint-line {
+  flex: 0 0 100%;
+}
+app-forms-page .submit-btn {
+  margin-top: 30px;
+}

@@ -1,0 +1,15 @@
+name: "Deploy a branch"
+
+on: workflow_dispatch
+
+jobs:
+  deploy-branch:
+    name: "Deploy a branch"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: "budget-angular"
+          heroku_email: "pietrucha.bartosz@gmail.com"

@@ -1,0 +1,74 @@
+:host {
+  display: block;
+  margin-top: 20vh;
+  width: 100%;
+}
+
+.auth0 {
+  position: absolute;
+  right: 20px;
+  top: 0;
+}
+
+form {
+  max-width: 300px;
+  margin: auto;
+
+  .header {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  .actions {
+    button {
+      display: block;
+      margin: 15px 0;
+      width: 100%;
+
+      &.google-id {
+        background-color: rgb(216 72 48 / 20%);
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+
+      &.github button {
+        background-color: rgb(0 97 235);
+      }
+
+      &.google button {
+        background-color: rgb(216 72 48);
+      }
+    }
+
+    .separator {
+      text-align: center;
+      position: relative;
+
+      span {
+        background: white;
+        padding: 10px;
+      }
+
+      ::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: calc(50% - 1px);
+        z-index: -1;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(229 232 237);
+        border-image: initial;
+      }
+    }
+  }
+}

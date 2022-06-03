@@ -29,19 +29,19 @@ export class TreeListComponent implements OnInit {
   }
 
   getAllNodes() {
-    // this.http.get<TreeApiResponse>('./assets/tree-response.json').subscribe(response => {
-    //     this.treeList = <TreeNode[]>response.data;
-    //     console.log(this.treeList);
-    // });
+    this.http.get<TreeApiResponse>('./assets/tree-response.json').subscribe(response => {
+        this.treeList = <TreeNode[]>response.data;
+        console.log(this.treeList);
+    });
 
-    this.http
-      .get<TreeApiResponse>(
-        'http://127.0.0.1:8080/ParentChildRelationsTopics/topics/tree/data'
-      )
-      .subscribe((response) => {
-        this.treeList = response.data;
-        // console.log(response);
-      });
+    // this.http
+    //   .get<TreeApiResponse>(
+    //     'http://127.0.0.1:8080/ParentChildRelationsTopics/topics/tree/data'
+    //   )
+    //   .subscribe((response) => {
+    //     this.treeList = response.data;
+    //     // console.log(response);
+    //   });
   }
 
   onCreateNode() {
