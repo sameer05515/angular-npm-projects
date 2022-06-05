@@ -1,0 +1,25 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$primary: mat.define-palette(mat.$pink-palette, 600);
+$accent: mat.define-palette(mat.$pink-palette, 100);
+
+$theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+    )
+  )
+);
+
+@include mat.all-component-themes($theme);
+
+body {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+$primary-color: mat.get-color-from-palette($primary);
+$background-color: rgb(237 237 237);
+$secondary-background-color: #f8f8f8;
