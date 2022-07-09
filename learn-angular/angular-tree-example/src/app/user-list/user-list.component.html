@@ -1,0 +1,34 @@
+<table class="table table-hover table-dark">
+  <caption>
+    <h2>All Users</h2>
+    <button type="button" class="btn btn-primary btn-sm" (click)="addUser()">
+      Add
+    </button>
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; index as i">
+      <th scope="row">{{i+1}}</th>
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>
+        <button type="button" class="btn btn-primary btn-sm" (click)="editUser(user)">
+          Edit
+        </button>
+        <button type="button" class="btn btn-primary btn-sm" (click)="showDetails(user)">
+          Details
+        </button>
+        <button type="button" class="btn btn-danger btn-sm" (click)="deleteUser(user)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

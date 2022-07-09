@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewComponent implements OnInit {
 
+  viewObj={
+    title:"",
+    description:""
+  }
+
   constructor() { }
 
   ngOnInit(): void {

@@ -10,6 +10,8 @@ import { Color } from 'ng2-charts';
 
 export class BubbleChartComponent {
 
+  public bubbleChartColors = [];
+
   public bubbleChartOptions: ChartOptions = {
     responsive: true,
     scales: {
