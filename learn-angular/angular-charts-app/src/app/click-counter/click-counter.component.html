@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>CLICK COUNTER (ONLINE REPLACEMENT FOR RUDRAKSH CHANTING)</h2>
+
+    <div>{{clickDataList | json}}</div>
+
+    <div class="row">
+
+        <div class="col-lg-12 col-md-12">
+            <h1>Current count : {{ countResult }}</h1>
+        </div>
+
+        <hr style="position: relative; top: 20px; border: none; height: 12px; background: black; margin-bottom: 50px;"/>
+        <div 
+        class="col-lg-12 col-md-12" 
+        style="border: 2px solid greenyellow;border-radius: 12px;padding: 5px;  text-align: center;"
+        (click)="onDivClick()">
+            <h1>click anywhere in this area</h1>
+        </div>
+
+    </div>
+
+    
+
+    <div class="chart-wrapper">
+        <canvas baseChart 
+            [datasets]="lineChartData" 
+            [labels]="lineChartLabels" 
+            [options]="lineChartOptions"
+            [colors]="lineChartColors" 
+            [legend]="lineChartLegend" 
+            [chartType]="lineChartType" 
+            [plugins]="lineChartPlugins">
+        </canvas>
+    </div>
+
+</div>
