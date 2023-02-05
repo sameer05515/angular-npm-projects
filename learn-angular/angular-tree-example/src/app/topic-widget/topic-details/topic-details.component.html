@@ -1,8 +1,11 @@
 <div class="row">
     <div class="col-sm-12">
-        {{ selectedTopic.title }}
+
+        <b>Selected:- </b>
+        <span *ngIf="selectedTopic!=null">{{ selectedTopic.title }}</span>
+        
     </div>
     <div class="col-sm-12">
-        <div class="border border-success" [innerHtml]="selectedTopic.description"></div>
+        <div *ngIf="selectedTopic!=null" class="border border-success" [innerHtml]="selectedTopic.description"></div>
     </div>
 </div>

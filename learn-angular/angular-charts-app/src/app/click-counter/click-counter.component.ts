@@ -16,11 +16,11 @@ interface ClickData {
 export class ClickCounterComponent implements OnInit {
 
   clickDataList: ClickData[] = [
-    { "time": "July 9th 2022, 6:32 pm", "count": 277 },
-    { "time": "July 9th 2022, 6:33 pm", "count": 268 },
-    { "time": "July 9th 2022, 6:34 pm", "count": 271 },
-    { "time": "July 9th 2022, 6:35 pm", "count": 278 },
-    { "time": "July 9th 2022, 6:36 pm", "count": 279 }
+    // { "time": "July 9th 2022, 6:32 pm", "count": 277 },
+    // { "time": "July 9th 2022, 6:33 pm", "count": 268 },
+    // { "time": "July 9th 2022, 6:34 pm", "count": 271 },
+    // { "time": "July 9th 2022, 6:35 pm", "count": 278 },
+    // { "time": "July 9th 2022, 6:36 pm", "count": 279 }
   ];
 
   countResult = "";
@@ -76,7 +76,9 @@ export class ClickCounterComponent implements OnInit {
       }
     }
 
-    this.clickDataList= this.clickDataList.splice(-5);
+    if(this.clickDataList.length>5){
+      this.clickDataList= this.clickDataList.splice(-5);
+    }    
     this.lineChartData[0].data = this.clickDataList.map(x => x.count);
     this.lineChartLabels = this.clickDataList.map(x => x.time + '');
 
@@ -101,7 +103,7 @@ export class ClickCounterComponent implements OnInit {
     scales: {
       y: {
         ticks: {
-          stepSize: 50
+          stepSize: 1
         }
       },
       yAxes: [{

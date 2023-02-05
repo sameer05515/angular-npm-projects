@@ -12,6 +12,7 @@ import { TopicListComponent } from './topic-widget/topic-list/topic-list.compone
 import { TopicComponentComponent } from './topic-widget/topic-list/topic-component/topic-component.component';
 import { TopicDetailsComponent } from './topic-widget/topic-details/topic-details.component';
 import { HeaderComponent } from './header/header.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HeaderComponent } from './header/header.component';
     TopicListComponent,
     TopicComponentComponent,
     TopicDetailsComponent,
-    HeaderComponent
+    HeaderComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,

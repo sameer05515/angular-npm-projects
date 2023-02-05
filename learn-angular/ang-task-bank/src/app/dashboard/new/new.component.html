@@ -1,1 +1,16 @@
-<p>new works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <input type="text" [(ngModel)]="viewObj.title"/>
+        </div>
+        <div class="col-lg-12">
+            <textarea name="" id="" cols="30" rows="10" [(ngModel)]="viewObj.description"></textarea>			
+		</div>
+        <div class="col-lg-12">
+            {{viewObj|json}}
+        </div>
+        <button> save </button>
+    </div>
+</div>
+
+

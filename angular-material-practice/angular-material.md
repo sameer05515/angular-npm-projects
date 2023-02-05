@@ -36,6 +36,8 @@ https://codezup.com/angular-7891011-chart-js-example/
 
 https://www.positronx.io/angular-chart-js-tutorial-with-ng2-charts-examples/
 
+https://www.chartjs.org/docs/latest/
+
     If you do not have an existing project then create a new project with angular-cli.
         ng new example-chartjs
     Install Chart.js in your Angular project
