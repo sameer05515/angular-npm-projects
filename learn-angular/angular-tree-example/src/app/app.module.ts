@@ -13,6 +13,8 @@ import { TopicComponentComponent } from './topic-widget/topic-list/topic-compone
 import { TopicDetailsComponent } from './topic-widget/topic-details/topic-details.component';
 import { HeaderComponent } from './header/header.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { UserDetailComponent } from './user-list/user-detail/user-detail.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { UserListComponent } from './user-list/user-list.component';
     TopicComponentComponent,
     TopicDetailsComponent,
     HeaderComponent,
-    UserListComponent
+    UserListComponent,
+    UserDetailComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,

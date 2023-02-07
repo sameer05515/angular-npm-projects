@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../shared/user-model';
 import { RESUME_APP_BASE_URL } from '../shared/constants';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -12,7 +13,7 @@ export class UserListComponent implements OnInit {
 
   users: User[] = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
 
   }
 
@@ -35,7 +36,7 @@ export class UserListComponent implements OnInit {
   }
 
   showDetails(user:User){
-    
+    this.router.navigate(['/user-details',user.id]);
   }
 
   deleteUser(user:User){
