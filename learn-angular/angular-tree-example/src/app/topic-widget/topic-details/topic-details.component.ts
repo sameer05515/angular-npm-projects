@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-topic-details',
@@ -8,9 +9,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TopicDetailsComponent implements OnInit {
 
   @Input() selectedTopic:any="";
+  
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
   }
 
 }
