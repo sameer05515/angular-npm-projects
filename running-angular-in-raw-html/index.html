@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular in Raw HTML</title>
+    <!-- Optional: CSS Framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Angular JS files -->
+    <script src="https://unpkg.com/@angular/core@16.0.0/bundles/core.umd.js"></script>
+    <script src="https://unpkg.com/@angular/common@16.0.0/bundles/common.umd.js"></script>
+    <script src="https://unpkg.com/@angular/platform-browser@16.0.0/bundles/platform-browser.umd.js"></script>
+    <script src="https://unpkg.com/@angular/compiler@16.0.0/bundles/compiler.umd.js"></script>
+    <script src="https://unpkg.com/@angular/platform-browser-dynamic@16.0.0/bundles/platform-browser-dynamic.umd.js"></script>
+    <!-- Babel for on-the-fly transpilation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+    <h1>Angular in Raw HTML</h1>
+    <app-root></app-root>
+
+    <script type="text/babel">
+        const { NgModule, Component } = ng.core;
+        const { BrowserModule } = ng.platformBrowser;
+        const { platformBrowserDynamic } = ng.platformBrowserDynamic;
+
+        @Component({
+            selector: 'app-root',
+            template: `
+                <div class="container">
+                    <h2>Hello, Angular!</h2>
+                    <p>This is running without a CLI.</p>
+                </div>
+            `
+        })
+        class AppComponent {}
+
+        @NgModule({
+            declarations: [AppComponent],
+            imports: [BrowserModule],
+            bootstrap: [AppComponent]
+        })
+        class AppModule {}
+
+        platformBrowserDynamic().bootstrapModule(AppModule);
+    </script>
+</body>
+</html>
