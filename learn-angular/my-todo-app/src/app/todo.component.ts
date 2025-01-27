@@ -7,6 +7,7 @@ import {
   sortTodosByUrgencyAndImportance,
   sortTodosByStatus,
   ClassSuffixForStatus,
+  Todo,
 } from './Todo.dto';
 
 import { myTodos } from './data';
@@ -33,9 +34,9 @@ export class TodoComponent {
 
   filterActions = {
     [this.filterActionTypes.SHOW_ALL]: () => true,
-    [this.filterActionTypes.SHOW_OPEN_ONLY]: (todo: any) =>
+    [this.filterActionTypes.SHOW_OPEN_ONLY]: (todo: Todo) =>
       todo.status === Status.OPEN,
-    [this.filterActionTypes.SHOW_CLOSED_ONLY]: (todo: any) =>
+    [this.filterActionTypes.SHOW_CLOSED_ONLY]: (todo: Todo) =>
       todo.status === Status.CLOSED,
   };
 
