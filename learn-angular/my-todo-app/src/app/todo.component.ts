@@ -1,5 +1,5 @@
 // todo.component.ts
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'; 
 import {
   Status,
   getFilteredTodos,
