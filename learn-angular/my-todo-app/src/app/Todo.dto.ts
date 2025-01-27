@@ -58,7 +58,7 @@ export class Todo {
   static fromObject({
     name = "",
     createdDate = "",
-    status = Status.UNKNOWN,
+    status = Status.OPEN,
     closedOn = "",
     isUrgent = false,
     isImportant = false,
