@@ -20,9 +20,9 @@ const pipe =
 export default pipe;
 
 @Component({
-  selector: 'app-todo',
-  templateUrl: './todo.component.html',
-//   styleUrls: ['./todo.component.scss'],
+    selector: 'app-todo',
+    templateUrl: './todo.component.html',
+    standalone: false
 })
 export class TodoComponent {
   filterActionTypes = {
