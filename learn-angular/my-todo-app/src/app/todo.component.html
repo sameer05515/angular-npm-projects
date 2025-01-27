@@ -51,7 +51,7 @@
         *ngFor="let todo of todos"
         class="shadow rounded p-3 mb-5 mt-2 list-group-item list-group-item-{{ todo.status | lowercase }}"
       >
-        <div *ngIf="todo.status !== Status.CLOSED" class="row">
+        <div class="row">
           <span class="d-none d-md-inline col-9"></span>
           <span class="badge text-end text-break col-12 col-md-3 mb-3 text-bg-{{ todo.hasGroomed ? 'success' : 'danger' }}">
             {{ todo.hasGroomed ? 'Groomed' : 'This Todo is Not Fully Groomed Yet' }}

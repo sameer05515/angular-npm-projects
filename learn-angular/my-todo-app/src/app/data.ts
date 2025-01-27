@@ -1,4 +1,4 @@
-import { Status, Todo } from "./Todo.dto.js";
+import { Status, Todo } from "./Todo.dto";
 
 const internalTodoDataArr = [
   Todo.fromData(
