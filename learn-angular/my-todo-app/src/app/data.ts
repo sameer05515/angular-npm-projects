@@ -375,6 +375,8 @@ Practice and revise Spring boot security with
     Approach will be similar. we will use hardcoded json to populate todo data and will try to render UI with Angular.
 
     <b>Purpose: </b> Learning Angular by creating this app
+
+    Done with help of chat gpt. <span class="badge text-bg-danger">However, i must learn the code.</span>
     `,
     createdDate: "28/Jan/2025",
     isUrgent: false,
