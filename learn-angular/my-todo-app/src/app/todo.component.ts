@@ -1,5 +1,5 @@
-// todo.component.ts
-import { Component } from '@angular/core'; 
+import { Component } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser'; // <-- Import here
 import {
   Status,
   getFilteredTodos,
@@ -9,7 +9,6 @@ import {
   ClassSuffixForStatus,
   Todo,
 } from './Todo.dto';
-
 import { myTodos } from './data';
 
 const pipe =
@@ -17,13 +16,12 @@ const pipe =
   (arg: T): T =>
     fns.reduce((acc, fn) => fn(acc), arg);
 
-
 export default pipe;
 
 @Component({
-    selector: 'app-todo',
-    templateUrl: './todo.component.html',
-    standalone: false
+  selector: 'app-todo',
+  templateUrl: './todo.component.html',
+  standalone: false,
 })
 export class TodoComponent {
   filterActionTypes = {
@@ -46,6 +44,8 @@ export class TodoComponent {
     sortTodosByStatus
   )(myTodos);
 
+  constructor(private sanitizer: DomSanitizer) {} // <-- Inject DomSanitizer
+
   handleFilterChange(
     actionType: string = this.filterActionTypes.SHOW_ALL
   ): void {
@@ -55,5 +55,10 @@ export class TodoComponent {
       sortTodosByUrgencyAndImportance,
       sortTodosByStatus
     )(myTodos);
+  }
+
+  // Method to sanitize and render raw HTML content
+  getSanitizedHtml(todoName: string): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(todoName);
   }
 }

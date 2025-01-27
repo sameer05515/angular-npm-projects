@@ -58,7 +58,8 @@
           </span>
         </div>
   
-        <span style="white-space: pre-wrap;">{{ todo.name }}</span>
+        <!-- Render sanitized raw HTML -->
+        <span style="white-space: pre-wrap;" [innerHTML]="getSanitizedHtml(todo.name)"></span>
         <br />
         <span class="fw-bold">
           <span class="badge text-bg-danger">{{ todo.status }}</span>
