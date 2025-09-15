@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { Step1Item } from '../../model/Step1Item.type';
+import { Step1Data, Step1Item } from '../../model/Step1Item.type';
 
 @Component({
   selector: 'app-step1-data-renderer',
@@ -21,12 +21,12 @@ export class Step1DataRenderer implements OnInit {
 
   fetchSnapshots(): void {
     const url = 'http://localhost:3000/analyse-cgpt/api/step-1-fetch-all-snapshot-names/itr2';
-    this.http.get<unknown>(url).subscribe({
+    this.http.get<Step1Data>(url).subscribe({
       next: (data) => {
         // this.snapshots = data;
         // this.isLoading = false;
         console.log(data);        
-        this.snapshots.set(data?.step1)
+        this.snapshots.set(data.step1);
       },
       error: (err) => {
         console.error('Error fetching snapshots:', err);

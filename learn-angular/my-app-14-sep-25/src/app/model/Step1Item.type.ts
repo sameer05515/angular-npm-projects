@@ -9,3 +9,7 @@ export type Step1Item = {
   convCount: number;
   totalMsgCount: number;
 };
+
+export type Step1Data={
+  step1: Step1Item[]
+}
