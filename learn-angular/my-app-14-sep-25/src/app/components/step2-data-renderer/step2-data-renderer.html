@@ -1,1 +1,42 @@
-<p>step2-data-renderer works!</p>
+<div class="p-6">
+  <table class="min-w-full border rounded-lg overflow-hidden">
+    <thead class="">
+      <tr>
+        {/*
+        <th class="px-4 py-2 text-left border">ID</th>
+        */}
+        <th class="px-4 py-2 text-left border">Title</th>
+        <th class="px-4 py-2 text-left border">createdOn</th>
+        <th class="px-4 py-2 text-left border">updatedOn</th>
+        <th class="px-4 py-2 text-left border">Total Msg Count</th>
+        <th class="px-4 py-2 text-left border">Questions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of step2Data(); track item.id){
+      <tr key="{item.id}" class="">
+        {/*
+        <td class="px-4 py-2 border">{{item.id}}</td>
+        */}
+        <td class="px-4 py-2 border cursor-pointer">{{item.title}}</td>
+        <td class="px-4 py-2 border">{{item.createdOn}}</td>
+        <td class="px-4 py-2 border">{{item.updatedOn}}</td>
+        <td class="px-4 py-2 border">{{item.msgCount}}</td>
+        <td class="px-4 py-2 border">{{item.messages}}</td>
+      </tr>
+      }
+
+      <tr>
+        <td class="px-4 py-2"></td>
+        <td class="px-4 py-2"></td>
+        <td class="px-4 py-2"></td>
+        <td class="px-4 py-2 border">
+          Total: {{step2Data().map((item) => item.msgCount).reduce((acc, a) => acc + a, 0)}}
+        </td>
+        <td class="px-4 py-2 border">
+          Total: {{step2Data().map((item) => item.messages).reduce((acc, a) => acc + a, 0)}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
