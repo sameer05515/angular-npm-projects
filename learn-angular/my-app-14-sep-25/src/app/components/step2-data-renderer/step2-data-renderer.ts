@@ -1,6 +1,7 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Step1Data, Step1Item } from '../../model/Step1Item.type';
 
 @Component({
   selector: 'app-step2-data-renderer',
@@ -8,9 +9,11 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './step2-data-renderer.html',
   styleUrl: './step2-data-renderer.css',
 })
-export class Step2DataRenderer {
+export class Step2DataRenderer implements OnInit {
   readonly slug: string;
   private route = inject(ActivatedRoute);
+
+  step2Data=signal<any>([]);
 
   http = inject(HttpClient);
 
@@ -18,4 +21,25 @@ export class Step2DataRenderer {
     // Access route parameters from snapshot
     this.slug = this.route.snapshot.paramMap.get('slug') || '';
   }
+
+  ngOnInit(): void {
+    this.fetchSnapshots();
+  }
+
+  fetchSnapshots(): void {
+      const url = `http://localhost:3000/analyse-cgpt/api/step-2-fetch-count-of-conversation/itr1/${this.slug}`;
+      this.http.get(url).subscribe({
+        next: (data) => {
+          // this.snapshots = data;
+          // this.isLoading = false;
+          console.log("data->     ",data);        
+          this.step2Data.set(data);
+        },
+        error: (err) => {
+          console.error('Error fetching snapshots:', err);
+          // this.errorMsg = 'Failed to load snapshot data';
+          // this.isLoading = false;
+        },
+      });
+    }
 }
