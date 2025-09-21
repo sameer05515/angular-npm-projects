@@ -15,17 +15,21 @@
     </thead>
     <tbody>
       @for (item of snapshots(); track item.id) {
-        <tr>
-          <td class="px-4 py-2 border">{{ item.id }}</td>
-          <td class="px-4 py-2 border cursor-pointer">{{ item.slug }}</td>
-          <td class="px-4 py-2 border">{{ item.order }}</td>
-          <td class="px-4 py-2 border">{{ item.location }}</td>
-          <td class="px-4 py-2 border">{{ item.isLatest ? "✅" : "❌" }}</td>
-          <td class="px-4 py-2 border">{{ item.createdOn }}</td>
-          <td class="px-4 py-2 border">{{ item.createdBy }}</td>
-          <td class="px-4 py-2 border">{{ item.convCount }}</td>
-          <td class="px-4 py-2 border">{{ item.totalMsgCount }}</td>
-        </tr>
+      <tr>
+        <td class="px-4 py-2 border">{{ item.id }}</td>
+        <td class="px-4 py-2 border cursor-pointer">
+          <span (click)="navigateToSlug('v40')">
+            {{ item.slug }}
+          </span>
+        </td>
+        <td class="px-4 py-2 border">{{ item.order }}</td>
+        <td class="px-4 py-2 border">{{ item.location }}</td>
+        <td class="px-4 py-2 border">{{ item.isLatest ? '✅' : '❌' }}</td>
+        <td class="px-4 py-2 border">{{ item.createdOn }}</td>
+        <td class="px-4 py-2 border">{{ item.createdBy }}</td>
+        <td class="px-4 py-2 border">{{ item.convCount }}</td>
+        <td class="px-4 py-2 border">{{ item.totalMsgCount }}</td>
+      </tr>
       }
     </tbody>
   </table>

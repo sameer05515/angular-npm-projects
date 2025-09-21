@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { Step1Data, Step1Item } from '../../model/Step1Item.type';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-step1-data-renderer',
@@ -11,12 +12,19 @@ import { Step1Data, Step1Item } from '../../model/Step1Item.type';
 export class Step1DataRenderer implements OnInit {
   // constructor(private http: HttpClient) {}
 
+  private router = inject(Router);
+
   snapshots = signal<Array<Step1Item>>([]);
 
   http = inject(HttpClient);
 
   ngOnInit(): void {
     this.fetchSnapshots();
+  }
+
+  navigateToSlug(slug:string):void{
+// With route parameters
+    this.router.navigate(['/s', slug]);
   }
 
   fetchSnapshots(): void {
