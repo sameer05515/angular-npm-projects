@@ -2,9 +2,7 @@
   <table class="min-w-full border rounded-lg overflow-hidden">
     <thead class="">
       <tr>
-        {/*
-        <th class="px-4 py-2 text-left border">ID</th>
-        */}
+       
         <th class="px-4 py-2 text-left border">Title</th>
         <th class="px-4 py-2 text-left border">createdOn</th>
         <th class="px-4 py-2 text-left border">updatedOn</th>
@@ -15,9 +13,7 @@
     <tbody>
       @for (item of step2Data(); track item.id){
       <tr key="{item.id}" class="">
-        {/*
-        <td class="px-4 py-2 border">{{item.id}}</td>
-        */}
+        
         <td class="px-4 py-2 border cursor-pointer">{{item.title}}</td>
         <td class="px-4 py-2 border">{{item.createdOn}}</td>
         <td class="px-4 py-2 border">{{item.updatedOn}}</td>
@@ -26,7 +22,7 @@
       </tr>
       }
 
-      <!-- <tr>
+      <tr>
         <td class="px-4 py-2"></td>
         <td class="px-4 py-2"></td>
         <td class="px-4 py-2"></td>
@@ -36,7 +32,7 @@
         <td class="px-4 py-2 border">
           Total: {{step2Data().map((item) => item.messages).reduce((acc, a) => acc + a, 0)}}
         </td>
-      </tr> -->
+      </tr>
     </tbody>
   </table>
 </div>

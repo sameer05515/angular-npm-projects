@@ -23,6 +23,7 @@ export class Step2DataRenderer implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log("Fetching step 2 data")
     this.fetchSnapshots();
   }
 
