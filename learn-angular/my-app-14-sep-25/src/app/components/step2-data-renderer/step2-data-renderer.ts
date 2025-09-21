@@ -2,6 +2,7 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Step1Data, Step1Item } from '../../model/Step1Item.type';
+import { Step2Item } from '../../model/Step2Item.type';
 
 @Component({
   selector: 'app-step2-data-renderer',
@@ -13,7 +14,7 @@ export class Step2DataRenderer implements OnInit {
   readonly slug: string;
   private route = inject(ActivatedRoute);
 
-  step2Data = signal<any>([]);
+  step2Data = signal<Step2Item[]>([]);
 
   totalMsgCount = 0;
   totalMessages = 0;
@@ -32,7 +33,7 @@ export class Step2DataRenderer implements OnInit {
 
   fetchSnapshots(): void {
     const url = `http://localhost:3000/analyse-cgpt/api/step-2-fetch-count-of-conversation/itr1/${this.slug}`;
-    this.http.get(url).subscribe({
+    this.http.get<Step2Item[]>(url).subscribe({
       next: (data) => {
         // this.snapshots = data;
         // this.isLoading = false;
