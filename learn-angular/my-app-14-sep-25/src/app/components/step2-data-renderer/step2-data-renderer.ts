@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-step2-data-renderer',
@@ -10,6 +11,8 @@ import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 export class Step2DataRenderer {
   readonly slug: string;
   private route = inject(ActivatedRoute);
+
+  http = inject(HttpClient);
 
   constructor() {
     // Access route parameters from snapshot
