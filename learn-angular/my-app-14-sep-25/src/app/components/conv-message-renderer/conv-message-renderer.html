@@ -1,1 +1,46 @@
-<p>conv-message-renderer works!</p>
+<div className="bg-gray-100 dark:bg-gray-800 flex flex-col h-screen p-6">
+  <div className="container mx-auto shadow-lg rounded-lg flex flex-col h-full">
+    <div className="flex justify-between items-center p-4 h-[10vh] border-b">
+      <div className="p-4 text-xs text-gray-600 dark:text-gray-100">
+        <p>
+          {{ conversation()?.title }} 
+          
+          <!-- (
+            {{ conversation()?.selectedIndex + 1 }}
+          /
+          {{
+            conversation()?.totalConv
+          }}
+          ) -->
+        </p>
+        <p><span className="font-semibold">Created On:</span> {{ conversation()?.createdOn }}</p>
+        <p><span className="font-semibold">Updated On:</span> {{ conversation()?.updatedOn }}</p>
+        <p><span className="font-semibold">Message Count:</span> {{ conversation()?.msgCount }}</p>
+      </div>
+      <div>
+        <button
+          id="prevConversationBtn"
+          title="Prev Conversation"
+          className="px-4 py-2 bg-gray-300 text-gray-100 dark:text-gray-700 rounded-lg disabled:opacity-50"
+        >
+          ⏪
+        </button>
+        <button
+          id="nextConversationBtn"
+          title="Next Conversation"
+          className="px-4 py-2 bg-gray-300 text-gray-100 dark:text-gray-700 rounded-lg disabled:opacity-50"
+        >
+          ⏩
+        </button>
+      </div>
+    </div>
+
+    <div id="root" className="flex-1 p-4 overflow-auto h-[50vh] space-y-4">
+      @for(msg of conversation()?.messages; track msg.q.id){
+            <app-markdown-viewer [markdownContent]="msg.q.content"></app-markdown-viewer>
+
+       }
+      <!-- <QAViewer key={msg.q.id} data={msg} /> -->
+    </div>
+  </div>
+</div>

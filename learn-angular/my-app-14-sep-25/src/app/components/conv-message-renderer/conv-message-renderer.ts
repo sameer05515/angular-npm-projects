@@ -2,10 +2,11 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { ConvItem } from '../../model/Conv.type';
+import { MarkdownViewer } from '../markdown-viewer/markdown-viewer';
 
 @Component({
   selector: 'app-conv-message-renderer',
-  imports: [],
+  imports: [MarkdownViewer],
   templateUrl: './conv-message-renderer.html',
   styleUrl: './conv-message-renderer.css',
 })
