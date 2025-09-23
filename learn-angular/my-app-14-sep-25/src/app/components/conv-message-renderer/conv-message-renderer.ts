@@ -1,6 +1,7 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { ConvItem } from '../../model/Conv.type';
 
 @Component({
   selector: 'app-conv-message-renderer',
@@ -13,6 +14,7 @@ export class ConvMessageRenderer {
   readonly convId: string;
   private route = inject(ActivatedRoute);
   http = inject(HttpClient);
+  conversation = signal<ConvItem | null>(null);
 
   constructor() {
     // Access route parameters from snapshot
@@ -28,10 +30,10 @@ export class ConvMessageRenderer {
   fetchSnapshots(): void {
     const url = `http://localhost:3000/analyse-cgpt/api/step-3-fetch-messages-of-conversation/itr1/${this.slug}/${this.convId}`;
 
-    this.http.get(url).subscribe({
+    this.http.get<ConvItem>(url).subscribe({
       next: (data) => {
         console.log('data->     ', data);
-        // this.step2Data.set(data);
+        this.conversation.set(data);
       },
       error: (err) => {
         console.error('Error fetching snapshots:', err);
