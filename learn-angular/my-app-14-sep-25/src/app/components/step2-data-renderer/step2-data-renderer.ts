@@ -1,8 +1,9 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot,Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Step1Data, Step1Item } from '../../model/Step1Item.type';
 import { Step2Item } from '../../model/Step2Item.type';
+
 
 @Component({
   selector: 'app-step2-data-renderer',
@@ -13,6 +14,7 @@ import { Step2Item } from '../../model/Step2Item.type';
 export class Step2DataRenderer implements OnInit {
   readonly slug: string;
   private route = inject(ActivatedRoute);
+  private router = inject(Router);
 
   step2Data = signal<Step2Item[]>([]);
 
@@ -29,6 +31,11 @@ export class Step2DataRenderer implements OnInit {
   ngOnInit(): void {
     console.log('Fetching step 2 data');
     this.fetchSnapshots();
+  }
+
+  navigateToConv(slug:string,convId:string):void{
+    console.log("slug: ",slug," convId: ",convId);
+    this.router.navigate(['/s', slug,"c",convId]);
   }
 
   fetchSnapshots(): void {

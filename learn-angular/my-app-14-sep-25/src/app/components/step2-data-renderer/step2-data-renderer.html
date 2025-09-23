@@ -2,7 +2,6 @@
   <table class="min-w-full border rounded-lg overflow-hidden">
     <thead class="">
       <tr>
-       
         <th class="px-4 py-2 text-left border">Title</th>
         <th class="px-4 py-2 text-left border">createdOn</th>
         <th class="px-4 py-2 text-left border">updatedOn</th>
@@ -13,12 +12,15 @@
     <tbody>
       @for (item of step2Data(); track item.id){
       <tr key="{item.id}" class="">
-        
-        <td class="px-4 py-2 border cursor-pointer">{{item.title}}</td>
-        <td class="px-4 py-2 border">{{item.createdOn}}</td>
-        <td class="px-4 py-2 border">{{item.updatedOn}}</td>
-        <td class="px-4 py-2 border">{{item.msgCount}}</td>
-        <td class="px-4 py-2 border">{{item.messages}}</td>
+        <td class="px-4 py-2 border cursor-pointer">
+          <span (click)="navigateToConv(slug,item.id)">
+            {{ item.title }}
+          </span>
+        </td>
+        <td class="px-4 py-2 border">{{ item.createdOn }}</td>
+        <td class="px-4 py-2 border">{{ item.updatedOn }}</td>
+        <td class="px-4 py-2 border">{{ item.msgCount }}</td>
+        <td class="px-4 py-2 border">{{ item.messages }}</td>
       </tr>
       }
 
@@ -26,12 +28,8 @@
         <td class="px-4 py-2"></td>
         <td class="px-4 py-2"></td>
         <td class="px-4 py-2"></td>
-        <td class="px-4 py-2 border">
-          Total: {{totalMsgCount}}
-        </td>
-        <td class="px-4 py-2 border">
-          Total: {{totalMessages}}
-        </td>
+        <td class="px-4 py-2 border">Total: {{ totalMsgCount }}</td>
+        <td class="px-4 py-2 border">Total: {{ totalMessages }}</td>
       </tr>
     </tbody>
   </table>
