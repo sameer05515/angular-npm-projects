@@ -37,7 +37,7 @@
 
     <div id="root" class="flex-1 p-4 overflow-auto h-[50vh] space-y-4">
       @for(msg of conversation()?.messages; track msg.q.id){
-      <app-qaviewer [q]="msg"></app-qaviewer>
+      <app-qaviewer [data]="msg"></app-qaviewer>
       }
     </div>
   </div>

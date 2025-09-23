@@ -1,1 +1,19 @@
-<p>qaviewer works!</p>
+<div class="max-w-full mx-auto mt-6 space-y-4 p-2 m-2">
+  <!-- Question Card -->
+  <div class="bg-blue-200 dark:bg-blue-950 shadow-md rounded-lg overflow-hidden">
+    <!-- <QAMetadata data={data.q} /> -->
+    <!-- <app-markdown-viewer [markdownContent]="data?.q"></app-markdown-viewer> -->
+    <pre class="whitespace-pre-wrap break-words m-4">{{ data?.q?.content }}</pre>
+  </div>
+
+  <!-- Answer Cards -->
+  @for(answer of data?.ans; track answer.id){
+  <div key="{answer.id}" class="bg-gray-200 dark:bg-gray-900 shadow-md rounded-lg overflow-hidden">
+    <!-- <QAMetadata data="{answer}" /> -->
+    <div class="p-4">
+      <!-- <MDSectionV1 content="{answer.content}" /> -->
+       <app-markdown-viewer [markdownContent]="answer.content"></app-markdown-viewer>
+    </div>
+  </div>
+  }
+</div>

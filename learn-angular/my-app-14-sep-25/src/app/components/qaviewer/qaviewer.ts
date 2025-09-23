@@ -9,5 +9,5 @@ import { MarkdownViewer } from '../markdown-viewer/markdown-viewer';
   styleUrl: './qaviewer.css',
 })
 export class QAViewer {
-  @Input() q: Question | null = null;
+  @Input() data: Question | null = null;
 }
