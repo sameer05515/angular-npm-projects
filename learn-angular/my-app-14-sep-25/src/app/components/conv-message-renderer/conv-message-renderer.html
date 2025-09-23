@@ -37,7 +37,7 @@
 
     <div id="root" className="flex-1 p-4 overflow-auto h-[50vh] space-y-4">
       @for(msg of conversation()?.messages; track msg.q.id){
-            <app-markdown-viewer [markdownContent]="msg.q.content"></app-markdown-viewer>
+            <app-qaviewer [q]="msg"></app-qaviewer>
 
        }
       <!-- <QAViewer key={msg.q.id} data={msg} /> -->
