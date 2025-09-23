@@ -3,8 +3,8 @@
     <div className="flex justify-between items-center p-4 h-[10vh] border-b">
       <div className="p-4 text-xs text-gray-600 dark:text-gray-100">
         <p>
-          {{ conversation()?.title }} 
-          
+          {{ conversation()?.title }}
+
           <!-- (
             {{ conversation()?.selectedIndex + 1 }}
           /
@@ -37,10 +37,8 @@
 
     <div id="root" className="flex-1 p-4 overflow-auto h-[50vh] space-y-4">
       @for(msg of conversation()?.messages; track msg.q.id){
-            <app-qaviewer [q]="msg"></app-qaviewer>
-
-       }
-      <!-- <QAViewer key={msg.q.id} data={msg} /> -->
+      <app-qaviewer [q]="msg"></app-qaviewer>
+      }
     </div>
   </div>
 </div>
