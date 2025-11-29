@@ -1,0 +1,78 @@
+<!-- todo.component.html -->
+<div class="container-fluid min-vh-100 bg-success p-2 bg-opacity-75">
+    <h1>Welcome</h1>
+  
+    <h1>My-ToDo List:v1</h1>
+    <details>
+      <summary>Details</summary>
+      <p>Here we will put all our To-dos, in below format</p>
+      <pre>[Date]:[Status- (Open/Closed)]- Title of to-do Description (As short as possible)</pre>
+    </details>
+  
+    <h3>My List</h3>
+  
+    <!-- Button Group -->
+    <div class="btn-group bg-info" role="group" aria-label="Basic radio toggle button group">
+      <input
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="show-open-todos-btn"
+        autocomplete="off"
+        (change)="handleFilterChange(filterActionTypes.SHOW_OPEN_ONLY)"
+      />
+      <label class="btn btn-outline-primary" for="show-open-todos-btn">Show Open</label>
+  
+      <input
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="show-closed-todos-btn"
+        autocomplete="off"
+        (change)="handleFilterChange(filterActionTypes.SHOW_CLOSED_ONLY)"
+      />
+      <label class="btn btn-outline-primary" for="show-closed-todos-btn">Show Closed</label>
+  
+      <input
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="show-all-todos-btn"
+        autocomplete="off"
+        checked
+        (change)="handleFilterChange(filterActionTypes.SHOW_ALL)"
+      />
+      <label class="btn btn-outline-primary" for="show-all-todos-btn">Show All</label>
+    </div>
+  
+    <!-- To-Do List -->
+    <ul class="list-group col-8">
+      <li
+        *ngFor="let todo of todos"
+        class="shadow rounded p-3 mb-5 mt-2 list-group-item list-group-item-{{ todo.status | lowercase }}"
+      >
+        <div class="row">
+          <span class="d-none d-md-inline col-9"></span>
+          <span class="badge text-end text-break col-12 col-md-3 mb-3 text-bg-{{ todo.hasGroomed ? 'success' : 'danger' }}">
+            {{ todo.hasGroomed ? 'Groomed' : 'This Todo is Not Fully Groomed Yet' }}
+          </span>
+        </div>
+  
+        <!-- Render sanitized raw HTML -->
+        <span style="white-space: pre-wrap;" [innerHTML]="getSanitizedHtml(todo.name)"></span>
+        <br />
+        <span class="fw-bold">
+          <span class="badge text-bg-danger">{{ todo.status }}</span>
+          <span class="badge text-bg-{{ todo.isUrgent ? 'danger' : 'warning' }}">
+            {{ todo.isUrgent ? '' : 'Not' }} Urgent
+          </span>
+          <span class="badge text-bg-{{ todo.isImportant ? 'dark' : 'warning' }}">
+            {{ todo.isImportant ? '' : 'Not' }} Important
+          </span>
+          <span class="badge text-bg-secondary">Created On: {{ todo.createdDate || 'Missing' }}</span>
+          <span *ngIf="todo.closedOn" class="badge text-bg-secondary">Closed On: {{ todo.closedOn }}</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+  

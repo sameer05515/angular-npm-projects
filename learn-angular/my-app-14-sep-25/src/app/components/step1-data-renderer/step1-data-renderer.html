@@ -1,0 +1,36 @@
+<div class="p-6">
+  <table class="min-w-full border rounded-lg overflow-hidden">
+    <thead>
+      <tr>
+        <th class="px-4 py-2 text-left border">ID</th>
+        <th class="px-4 py-2 text-left border">Slug</th>
+        <th class="px-4 py-2 text-left border">Order</th>
+        <th class="px-4 py-2 text-left border">Location</th>
+        <th class="px-4 py-2 text-left border">Is Latest</th>
+        <th class="px-4 py-2 text-left border">Created On</th>
+        <th class="px-4 py-2 text-left border">Created By</th>
+        <th class="px-4 py-2 text-left border">Conv Count</th>
+        <th class="px-4 py-2 text-left border">Total Msg Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of snapshots(); track item.id) {
+      <tr>
+        <td class="px-4 py-2 border">{{ item.id }}</td>
+        <td class="px-4 py-2 border cursor-pointer">
+          <span (click)="navigateToSlug(item.slug)">
+            {{ item.slug }}
+          </span>
+        </td>
+        <td class="px-4 py-2 border">{{ item.order }}</td>
+        <td class="px-4 py-2 border">{{ item.location }}</td>
+        <td class="px-4 py-2 border">{{ item.isLatest ? '✅' : '❌' }}</td>
+        <td class="px-4 py-2 border">{{ item.createdOn }}</td>
+        <td class="px-4 py-2 border">{{ item.createdBy }}</td>
+        <td class="px-4 py-2 border">{{ item.convCount }}</td>
+        <td class="px-4 py-2 border">{{ item.totalMsgCount }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
