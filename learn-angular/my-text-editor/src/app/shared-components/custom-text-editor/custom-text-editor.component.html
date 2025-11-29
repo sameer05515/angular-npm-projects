@@ -1,19 +1,113 @@
-<div class="container">
+<div class="container" [class.dark-mode]="darkMode">
   <header class="header">
-    <h1>AngularEditor</h1>
-    <p>Native WYSIWYG editor for Angular 6+ and 13+</p>
+    <div class="header-content">
+      <div>
+        <input 
+          type="text" 
+          [(ngModel)]="documentTitle" 
+          class="document-title"
+          placeholder="Document Title">
+        <p class="subtitle">WYSIWYG Text Editor</p>
+      </div>
+      <div class="header-actions">
+        <button 
+          class="btn-icon" 
+          [class.active]="darkMode"
+          (click)="toggleDarkMode()"
+          title="Toggle Dark Mode">
+          {{ darkMode ? '☀️' : '🌙' }}
+        </button>
+        <button 
+          class="btn-icon" 
+          [class.active]="isFullscreen"
+          (click)="toggleFullscreen()"
+          title="Toggle Fullscreen">
+          {{ isFullscreen ? '🗗' : '🗖' }}
+        </button>
+      </div>
+    </div>
   </header>
-  <angular-editor 
-    [(ngModel)]="htmlText" 
-    [config]="config"
-    (ngModelChange)="onContentChange($event)">
-  </angular-editor>
-  <h5 class="html-header">HTML Output</h5>
-  <div class="html">
-    <pre>{{ htmlText }}</pre>
-    <p class="config-info">
-      <span>Editable: {{ editable }}</span> | 
-      <span>Show Toolbar: {{ showToolbar }}</span>
-    </p>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <div class="toolbar-group">
+      <button class="toolbar-btn" (click)="openDocumentManager()" title="Open/Save Documents">
+        📁 Documents
+      </button>
+      <button class="toolbar-btn" (click)="saveDocument()" title="Quick Save">
+        💾 Save
+      </button>
+    </div>
+    
+    <div class="toolbar-group">
+      <button class="toolbar-btn" (click)="exportAsHtml()" title="Export as HTML">
+        📄 Export HTML
+      </button>
+      <button class="toolbar-btn" (click)="exportAsText()" title="Export as Text">
+        📝 Export Text
+      </button>
+      <button class="toolbar-btn" (click)="copyToClipboard()" title="Copy to Clipboard">
+        📋 Copy
+      </button>
+      <button class="toolbar-btn" (click)="printDocument()" title="Print">
+        🖨️ Print
+      </button>
+    </div>
+
+    <div class="toolbar-group">
+      <button class="toolbar-btn" (click)="clearContent()" title="Clear Content">
+        🗑️ Clear
+      </button>
+      <button 
+        class="toolbar-btn" 
+        [class.active]="showHtmlOutput"
+        (click)="toggleHtmlOutput()" 
+        title="Toggle HTML Output">
+        🔍 HTML
+      </button>
+    </div>
   </div>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar" *ngIf="textStats">
+    <span>Words: <strong>{{ textStats.words }}</strong></span>
+    <span>Characters: <strong>{{ textStats.characters }}</strong></span>
+    <span>Characters (no spaces): <strong>{{ textStats.charactersNoSpaces }}</strong></span>
+    <span>Paragraphs: <strong>{{ textStats.paragraphs }}</strong></span>
+  </div>
+
+  <!-- Editor -->
+  <div class="editor-container">
+    <angular-editor 
+      [(ngModel)]="htmlText" 
+      [config]="config"
+      (ngModelChange)="onContentChange($event)">
+    </angular-editor>
+  </div>
+
+  <!-- HTML Output -->
+  <div class="html-output" *ngIf="showHtmlOutput">
+    <div class="html-header-bar">
+      <h5 class="html-header">HTML Output</h5>
+      <button class="btn-small" (click)="copyHtmlToClipboard()">
+        📋 Copy HTML
+      </button>
+    </div>
+    <div class="html">
+      <pre>{{ htmlText }}</pre>
+      <p class="config-info">
+        <span>Editable: {{ editable }}</span> | 
+        <span>Show Toolbar: {{ showToolbar }}</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- Document Manager Modal -->
+  <app-document-manager
+    *ngIf="showDocumentManager"
+    [currentContent]="htmlText"
+    [currentTitle]="documentTitle"
+    (documentSelected)="onDocumentSelected($event)"
+    (closed)="closeDocumentManager()">
+  </app-document-manager>
 </div>

@@ -1,0 +1,75 @@
+<div class="document-manager-overlay" (click)="close()">
+  <div class="document-manager-modal" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>Document Manager</h2>
+      <button class="close-btn" (click)="close()" aria-label="Close">×</button>
+    </div>
+
+    <div class="modal-content">
+      <!-- Save Dialog -->
+      <div *ngIf="showSaveDialog" class="save-dialog">
+        <h3>{{ selectedDocumentId ? 'Update Document' : 'Save Document' }}</h3>
+        <div class="form-group">
+          <label for="saveTitle">Document Title:</label>
+          <input 
+            type="text" 
+            id="saveTitle" 
+            [(ngModel)]="saveTitle" 
+            placeholder="Enter document title"
+            class="title-input"
+            (keyup.enter)="saveDocument()">
+        </div>
+        <div class="button-group">
+          <button class="btn btn-primary" (click)="saveDocument()">Save</button>
+          <button class="btn btn-secondary" (click)="close()">Cancel</button>
+        </div>
+      </div>
+
+      <!-- Document List -->
+      <div *ngIf="!showSaveDialog">
+        <div class="toolbar">
+          <button class="btn btn-primary" (click)="openSaveDialog()">
+            <span>💾</span> Save Current Document
+          </button>
+        </div>
+
+        <div class="documents-list" *ngIf="documents.length > 0; else noDocuments">
+          <div 
+            *ngFor="let doc of documents" 
+            class="document-item"
+            (click)="loadDocument(doc)">
+            <div class="document-info">
+              <h4>{{ doc.title }}</h4>
+              <p class="document-meta">
+                Created: {{ formatDate(doc.createdAt) }}<br>
+                Updated: {{ formatDate(doc.updatedAt) }}
+              </p>
+            </div>
+            <div class="document-actions">
+              <button 
+                class="btn-icon" 
+                (click)="selectDocumentForUpdate(doc)"
+                title="Update">
+                ✏️
+              </button>
+              <button 
+                class="btn-icon btn-danger" 
+                (click)="deleteDocument(doc.id, $event)"
+                title="Delete">
+                🗑️
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <ng-template #noDocuments>
+          <div class="no-documents">
+            <p>No saved documents yet.</p>
+            <p>Click "Save Current Document" to save your work.</p>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
+

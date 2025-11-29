@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Dark Mode Global Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .angular-editor {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .angular-editor-toolbar {
+  background-color: #2a2a2a !important;
+  border-color: #444 !important;
+}
+
+body.dark-mode .angular-editor-toolbar button {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .angular-editor-toolbar button:hover {
+  background-color: #333 !important;
+}
+
+body.dark-mode .angular-editor-wrapper {
+  background-color: #1e1e1e !important;
+}
+
+body.dark-mode .angular-editor-textarea {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+}
