@@ -1,3 +1,13 @@
-<a routerLink="/custom-text">Tree-list</a> | <a routerLink="/test-custom-text">Tree-list</a>
+<nav class="navigation">
+  <a routerLink="/custom-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+    Text Editor
+  </a>
+  <span class="separator">|</span>
+  <a routerLink="/test-custom-text" routerLinkActive="active">
+    Test Component
+  </a>
+</nav>
 
-<router-outlet></router-outlet>
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>

@@ -6,7 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./test-text-component.component.css']
 })
 export class TestTextComponentComponent {
+  rawData: string = 'Raw Data';
+  editorContent: string = '<p>Test content for the editor</p>';
+  isEditable: boolean = true;
+  showToolbar: boolean = true;
 
-  rawData:string="Raw Data";
-
+  onContentChange(content: string): void {
+    this.editorContent = content;
+    console.log('Content changed:', content);
+  }
 }

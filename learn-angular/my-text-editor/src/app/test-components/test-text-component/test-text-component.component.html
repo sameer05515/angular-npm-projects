@@ -1,6 +1,38 @@
-<textarea name="tttt" id="" cols="30" rows="10" [(ngModel)]="rawData"></textarea>
+<div class="test-container">
+  <section class="input-section">
+    <h3>Text Input</h3>
+    <textarea 
+      name="rawData" 
+      id="rawData" 
+      cols="30" 
+      rows="10" 
+      [(ngModel)]="rawData">
+    </textarea>
+  </section>
 
-
-<app-custom-text-editor htmlContent="rawData" editable="true" showToolbar="true">
-
-</app-custom-text-editor>
+  <section class="editor-section">
+    <h3>Text Editor</h3>
+    <div class="controls">
+      <label>
+        <input 
+          type="checkbox" 
+          [(ngModel)]="isEditable" 
+          id="editable">
+        Editable
+      </label>
+      <label>
+        <input 
+          type="checkbox" 
+          [(ngModel)]="showToolbar" 
+          id="showToolbar">
+        Show Toolbar
+      </label>
+    </div>
+    <app-custom-text-editor 
+      [htmlContent]="editorContent"
+      [editable]="isEditable"
+      [showToolbar]="showToolbar"
+      (contentChange)="onContentChange($event)">
+    </app-custom-text-editor>
+  </section>
+</div>

@@ -1,13 +1,19 @@
 <div class="container">
-    <header class="header">
-        <h1>AngularEditor</h1>
-        <p>Native WYSIWYG editor for Angular 6+ and 13+</p>
-    </header>
-    <angular-editor [(ngModel)]="htmlText" [config]="config"></angular-editor>
-    <h5 class="html-header">HTML Output</h5>
-    <div class="html">
-        {{ htmlText }} <br> {{'showToolbar : ' + showToolbar}}
-    </div>
-
-
+  <header class="header">
+    <h1>AngularEditor</h1>
+    <p>Native WYSIWYG editor for Angular 6+ and 13+</p>
+  </header>
+  <angular-editor 
+    [(ngModel)]="htmlText" 
+    [config]="config"
+    (ngModelChange)="onContentChange($event)">
+  </angular-editor>
+  <h5 class="html-header">HTML Output</h5>
+  <div class="html">
+    <pre>{{ htmlText }}</pre>
+    <p class="config-info">
+      <span>Editable: {{ editable }}</span> | 
+      <span>Show Toolbar: {{ showToolbar }}</span>
+    </p>
+  </div>
 </div>
