@@ -1,0 +1,89 @@
+<section class="topic-page">
+  <h1>Topic Management</h1>
+  <p class="subtitle">Implemented from topic-mgmt API docs.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Create Topic</h2>
+      <form [formGroup]="createForm" (ngSubmit)="createTopic()" class="form">
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name" />
+        @if (createForm.controls.name.invalid && createForm.controls.name.touched) {
+          <p class="error">Name is required.</p>
+        }
+
+        <label for="description">Description</label>
+        <textarea id="description" rows="3" formControlName="description"></textarea>
+
+        <label for="parentId">Parent Id (optional)</label>
+        <input id="parentId" type="text" formControlName="parentId" />
+
+        <button type="submit" [disabled]="isSubmitting">Create Topic</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Search Topics</h2>
+      <form [formGroup]="searchForm" (ngSubmit)="searchTopics()" class="inline-form">
+        <input type="text" formControlName="searchString" placeholder="Search by keyword" />
+        <button type="submit">Search</button>
+        <button type="button" class="secondary" (click)="resetSearch()">Clear</button>
+      </form>
+    </div>
+  </div>
+
+  @if (selectedTopic) {
+    <div class="card">
+      <h2>Update Topic</h2>
+      <form [formGroup]="updateForm" (ngSubmit)="updateTopic()" class="form">
+        <label for="updateName">Name</label>
+        <input id="updateName" type="text" formControlName="name" />
+
+        <label for="updateDescription">Description</label>
+        <textarea id="updateDescription" rows="3" formControlName="description"></textarea>
+
+        <label for="updateParentId">Parent Id</label>
+        <input id="updateParentId" type="text" formControlName="parentId" />
+
+        <button type="submit" [disabled]="isSubmitting">Save Changes</button>
+      </form>
+    </div>
+  }
+
+  @if (errorMessage) {
+    <p class="error">{{ errorMessage }}</p>
+  }
+
+  @if (successMessage) {
+    <p class="success">{{ successMessage }}</p>
+  }
+
+  <div class="card">
+    <h2>Topics</h2>
+    @if (isLoading) {
+      <p>Loading topics...</p>
+    } @else if (!topics.length) {
+      <p>No topics found.</p>
+    } @else {
+      <div class="topic-list">
+        @for (topic of topics; track topic.uniqueId ?? topic.name) {
+          <div class="topic-item">
+            <div>
+              <p class="topic-name">{{ topic.name ?? 'Untitled' }}</p>
+              <p class="topic-meta">ID: {{ topic.uniqueId ?? 'N/A' }}</p>
+              <p class="topic-meta">{{ topic.description ?? '' }}</p>
+            </div>
+            <div class="actions">
+              <button type="button" (click)="editTopic(topic)">Edit</button>
+              @if (topic.uniqueId) {
+                <button type="button" class="secondary" (click)="publishTopic(topic.uniqueId + '')">
+                  Publish
+                </button>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>

@@ -41,7 +41,7 @@ export class LoginPageComponent {
     this.successMessage = '';
 
     this.http
-      .post<LoginResponse>(`${this.apiBaseUrl}/api/users/login`, this.form.getRawValue())
+      .post<LoginResponse>(`${this.apiBaseUrl}/users/login`, this.form.getRawValue())
       .subscribe({
         next: (response) => {
           localStorage.setItem('auth_token', response.token);
