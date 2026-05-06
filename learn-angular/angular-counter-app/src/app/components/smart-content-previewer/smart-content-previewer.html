@@ -1,0 +1,13 @@
+<section class="smart-preview-card">
+  <h2>{{ title }}</h2>
+
+  @if (hasContent) {
+    @if (shouldRenderAsHtml || shouldRenderAsMarkdown) {
+      <div class="html-content" [innerHTML]="renderedContent"></div>
+    } @else {
+      <pre>{{ value?.content }}</pre>
+    }
+  } @else {
+    <p class="empty-text">{{ emptyText }}</p>
+  }
+</section>

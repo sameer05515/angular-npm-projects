@@ -1,0 +1,16 @@
+<section class="smart-editor-card">
+  <h2>{{ title }}</h2>
+
+  <label for="smartContent">Content</label>
+  <textarea
+    id="smartContent"
+    rows="8"
+    [placeholder]="placeholder"
+    [(ngModel)]="content"
+    (ngModelChange)="onContentChange()"
+  ></textarea>
+
+  <div class="actions">
+    <button type="button" (click)="saveContent()" [disabled]="!content.trim()">Save</button>
+  </div>
+</section>

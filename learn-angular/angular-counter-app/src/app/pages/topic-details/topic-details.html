@@ -12,6 +12,11 @@
       <p><strong>Parent ID:</strong> {{ topic.parentId ?? 'N/A' }}</p>
       <p><strong>Description:</strong> {{ topic.description ?? '-' }}</p>
 
+      <app-smart-content-previewer
+        title="Smart Content"
+        [value]="{ content: smartContentText, textOutputType: smartContentTextOutputType }"
+      />
+
       <h2>Raw Topic Data</h2>
       <pre>{{ topic | json }}</pre>
     </div>
