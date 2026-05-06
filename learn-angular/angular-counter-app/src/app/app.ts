@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PostsComponent } from './components/posts/posts';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,PostsComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -1,0 +1,33 @@
+<div class="container">
+
+    <h1>Placeholder API Cards</h1>
+  
+    <div class="card-grid">
+  
+      @for(post of posts; track post.id) {
+  
+        <div class="card">
+  
+          <div class="card-header">
+            <span>#{{ post.id }}</span>
+          </div>
+  
+          <h2>
+            {{ post.title }}
+          </h2>
+  
+          <p>
+            {{ post.body }}
+          </p>
+  
+          <button>
+            Read More
+          </button>
+  
+        </div>
+  
+      }
+  
+    </div>
+  
+  </div>
