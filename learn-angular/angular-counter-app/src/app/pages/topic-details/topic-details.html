@@ -1,0 +1,19 @@
+<section class="topic-details-page">
+  <a routerLink="/topics" class="back-link">Back to topics</a>
+
+  @if (isLoading) {
+    <p>Loading topic details...</p>
+  } @else if (errorMessage) {
+    <p class="error">{{ errorMessage }}</p>
+  } @else if (topic) {
+    <div class="details-card">
+      <h1>{{ topic.name ?? 'Untitled Topic' }}</h1>
+      <p><strong>Unique ID:</strong> {{ topic.uniqueId ?? 'N/A' }}</p>
+      <p><strong>Parent ID:</strong> {{ topic.parentId ?? 'N/A' }}</p>
+      <p><strong>Description:</strong> {{ topic.description ?? '-' }}</p>
+
+      <h2>Raw Topic Data</h2>
+      <pre>{{ topic | json }}</pre>
+    </div>
+  }
+</section>

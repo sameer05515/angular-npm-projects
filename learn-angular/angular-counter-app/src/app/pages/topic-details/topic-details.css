@@ -1,0 +1,31 @@
+.topic-details-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.details-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.error {
+  color: #b00020;
+}
+
+pre {
+  background: #f6f8fa;
+  border-radius: 8px;
+  padding: 12px;
+  overflow: auto;
+}

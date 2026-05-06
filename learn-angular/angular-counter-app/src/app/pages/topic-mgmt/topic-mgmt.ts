@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 type Topic = {
   uniqueId?: string;
@@ -14,7 +15,7 @@ type Topic = {
 @Component({
   selector: 'app-topic-mgmt',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './topic-mgmt.html',
   styleUrl: './topic-mgmt.css'
 })

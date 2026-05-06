@@ -91,3 +91,14 @@ button {
   display: flex;
   gap: 8px;
 }
+
+.details-link {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #455a64;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}

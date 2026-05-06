@@ -76,6 +76,9 @@
             <div class="actions">
               <button type="button" (click)="editTopic(topic)">Edit</button>
               @if (topic.uniqueId) {
+                <a class="details-link" [routerLink]="['/topics', topic.uniqueId]">View Details</a>
+              }
+              @if (topic.uniqueId) {
                 <button type="button" class="secondary" (click)="publishTopic(topic.uniqueId + '')">
                   Publish
                 </button>
