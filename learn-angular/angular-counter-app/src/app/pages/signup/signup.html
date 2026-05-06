@@ -1,0 +1,43 @@
+<section class="auth-page">
+  <div class="auth-card">
+    <h1>Sign Up</h1>
+    <p class="auth-subtitle">Create your SmartNote user account.</p>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="auth-form">
+      <label for="username">Username</label>
+      <input id="username" type="text" formControlName="username" placeholder="Choose username" />
+      @if (form.controls.username.invalid && form.controls.username.touched) {
+        <p class="error-text">Username must be at least 3 characters.</p>
+      }
+
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" placeholder="Enter email address" />
+      @if (form.controls.email.invalid && form.controls.email.touched) {
+        <p class="error-text">Enter a valid email address.</p>
+      }
+
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" placeholder="Create password" />
+      @if (form.controls.password.invalid && form.controls.password.touched) {
+        <p class="error-text">Password must be at least 6 characters.</p>
+      }
+
+      <button type="submit" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Creating account...' : 'Create Account' }}
+      </button>
+    </form>
+
+    @if (errorMessage) {
+      <p class="error-text">{{ errorMessage }}</p>
+    }
+
+    @if (successMessage) {
+      <p class="success-text">{{ successMessage }}</p>
+    }
+
+    <p class="switch-link">
+      Already have an account?
+      <a routerLink="/login">Login</a>
+    </p>
+  </div>
+</section>

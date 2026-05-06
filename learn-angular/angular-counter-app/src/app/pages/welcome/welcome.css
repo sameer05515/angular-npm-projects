@@ -1,0 +1,40 @@
+.welcome-page {
+  padding: 24px;
+}
+
+.welcome-counter-card {
+  max-width: 420px;
+  margin: 0 auto 24px;
+  padding: 24px;
+  border-radius: 12px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-subtitle {
+  margin-top: 8px;
+  color: #5f6368;
+}
+
+h2 {
+  font-size: 48px;
+  margin: 20px 0;
+  color: #1976d2;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-group button {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #1976d2;
+  color: white;
+  font-size: 18px;
+}

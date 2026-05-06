@@ -1,26 +1,22 @@
-import { Component, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { PostsComponent } from './components/posts/posts';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule,PostsComponent],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  counter = signal(0);
+  private readonly router = inject(Router);
 
-  increment() {
-    this.counter.update(v => v + 1);
+  hasToken(): boolean {
+    return !!localStorage.getItem('auth_token');
   }
 
-  decrement() {
-    this.counter.update(v => v - 1);
-  }
-
-  reset() {
-    this.counter.set(0);
+  logout(): void {
+    localStorage.removeItem('auth_token');
+    this.router.navigateByUrl('/login');
   }
 }

@@ -1,20 +1,13 @@
-<div class="container">
-  <div class="card">
-    <h1>Angular Counter</h1>    
+<header class="top-nav">
+  @if (!hasToken()) {
+    <a routerLink="/login" routerLinkActive="active-link">Login</a>
+    <a routerLink="/signup" routerLinkActive="active-link">Sign Up</a>
+  } @else {
+    <a routerLink="/welcome" routerLinkActive="active-link">Welcome</a>
+    <button type="button" class="logout-btn" (click)="logout()">Logout</button>
+  }
+</header>
 
-    <h2>{{ counter() }}</h2>
-
-    <div class="btn-group">
-      <button (click)="decrement()">-</button>
-
-      <button (click)="reset()">Reset</button>
-
-      <button (click)="increment()">+</button>
-    </div>
-  </div>
-
-  
-</div>
-
-
-<app-posts />
+<main>
+  <router-outlet />
+</main>
