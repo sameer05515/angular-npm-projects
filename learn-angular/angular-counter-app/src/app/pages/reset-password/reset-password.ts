@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
@@ -11,13 +12,17 @@ import { RouterLink } from '@angular/router';
 })
 export class ResetPasswordPageComponent {
   private readonly fb = inject(FormBuilder);
+  private readonly http = inject(HttpClient);
+  private readonly apiBaseUrl = 'http://localhost:3003';
 
   isSubmitting = false;
   errorMessage = '';
   successMessage = '';
 
   readonly form = this.fb.nonNullable.group({
-    email: ['', [Validators.required, Validators.email]]
+    username: ['', [Validators.required]],
+    newPassword: ['', [Validators.required, Validators.minLength(6)]],
+    confirmPassword: ['', [Validators.required]]
   });
 
   submit(): void {
@@ -30,11 +35,31 @@ export class ResetPasswordPageComponent {
     this.errorMessage = '';
     this.successMessage = '';
 
-    setTimeout(() => {
-      this.successMessage =
-        'Reset password request captured. Connect this page to a backend reset endpoint when available.';
+    const { username, newPassword, confirmPassword } = this.form.getRawValue();
+
+    if (newPassword !== confirmPassword) {
+      this.errorMessage = 'New password and confirm password must match.';
       this.isSubmitting = false;
-      this.form.reset({ email: '' });
-    }, 500);
+      return;
+    }
+
+    this.http.post<{ message?: string }>(`${this.apiBaseUrl}/api/users/reset-password`, {
+      username,
+      newPassword
+    }).subscribe({
+      next: (response) => {
+        this.successMessage = response?.message ?? 'Password reset successful.';
+        this.isSubmitting = false;
+        this.form.reset({
+          username: '',
+          newPassword: '',
+          confirmPassword: ''
+        });
+      },
+      error: (error) => {
+        this.errorMessage = error?.error?.error ?? 'Failed to reset password. Please try again.';
+        this.isSubmitting = false;
+      }
+    });
   }
 }
